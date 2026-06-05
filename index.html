@@ -1,0 +1,1753 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema Institucional | EPO 381</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&family=Outfit:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ══════════ BARRA SUPERIOR DE PORTAL ══════════ -->
+<div id="portal-top-bar">
+    <div class="ptb-logo" onclick="irAlInicio()">
+        <img src="img/Logo.png" alt="Logo EPO 381" onerror="this.style.display='none'">
+        <div class="ptb-logo-text">
+            <h1>EPO 381</h1>
+            <span>Tenancingo</span>
+        </div>
+    </div>
+    <div class="ptb-user-name" id="ptb-nombre"></div>
+    <div class="ptb-actions">
+        <button class="ptb-btn ptb-btn-home" onclick="irAlInicio()">🏠 Ir al Inicio</button>
+        <button class="ptb-btn ptb-btn-logout" onclick="cerrarSesion()">🚪 Cerrar Sesión</button>
+    </div>
+</div>
+
+<header>
+    <div class="nav-wrapper">
+        <div class="logo-box" onclick="showPage('home')">
+            <img src="img/Logo.png" class="logo-img" alt="Logo">
+            <div class="logo-text">
+                <h1>EPO 381</h1>
+                <span>TENANCINGO</span>
+            </div>
+        </div>
+        <ul class="menu-list">
+            <li class="menu-item"><a class="menu-link" onclick="showPage('home')">Inicio</a></li>
+            <li class="menu-item">
+                <a class="menu-link">Acerca de ▾</a>
+                <div class="dropdown">
+                    <a class="drop-link" onclick="showPage('about')">📄 Misión / Visión</a>
+                    <a class="drop-link" onclick="showPage('valores')">⭐ Valores</a>
+                    <a class="drop-link" onclick="showPage('location')">📍 Ubicación</a>
+                    <a class="drop-link" onclick="showPage('mascota')">🦁 Mascota Institucional</a>
+                    <a class="drop-link" onclick="showPage('instalaciones')">🏫 Instalaciones</a>
+                    <a class="drop-link" onclick="showPage('calendario')">📅 Calendario Escolar</a>
+                </div>
+            </li>
+            <li class="menu-item">
+                <a class="menu-link">Comunidad ▾</a>
+                <div class="dropdown">
+                    <a class="drop-link" onclick="openLogin('Alumnos')">👨‍🎓 Portal Estudiante</a>
+                    <a class="drop-link" onclick="openLogin('Docentes')">👨‍🏫 Portal Docente</a>
+                    <a class="drop-link" onclick="openLogin('Orientadores')">📝 Portal Orientador</a>
+                </div>
+            </li>
+            <li class="menu-item"><a class="menu-link" onclick="showPage('contacto')" style="color: var(--p-red);">📞 Contacto</a></li>
+        </ul>
+    </div>
+</header>
+
+<!-- ══════════ INICIO ══════════ -->
+<main id="page-home" class="page active">
+    <div style="background: linear-gradient(rgba(30,41,59,0.8), rgba(142,27,34,0.6)), url('img/Logo.jpeg'); height: 450px; border-radius: 30px; display: flex; align-items: center; justify-content: center; color: white; text-align: center; background-position: center; background-size: cover; box-shadow: var(--shadow);">
+        <div>
+            <h2 style="font-size: 3.5rem; font-family: 'Outfit'; margin-bottom: 10px;">Bienvenido a la EPO 381</h2>
+            <p style="font-size: 1.4rem; font-weight: 300; letter-spacing: 2px;">"CULTURA, DISCIPLINA Y EXCELENCIA"</p>
+        </div>
+    </div>
+</main>
+
+<!-- ══════════ INSTALACIONES ══════════ -->
+<main id="page-instalaciones" class="page">
+    <div class="section-header"><h2>Nuestras Instalaciones</h2></div>
+    <div class="grid-layout">
+        <div class="card inst-card"><img src="img/Entrada.jpeg" class="inst-img"><div class="inst-info"><h4>Entrada Principal</h4><p>Acceso controlado para seguridad de nuestra comunidad.</p></div></div>
+        <div class="card inst-card"><img src="img/Aula.jpeg" class="inst-img"><div class="inst-info"><h4>Aulas de Clase</h4><p>9 espacios equipados para el desarrollo académico.</p></div></div>
+        <div class="card inst-card"><img src="img/Campo de Futbol.jpeg" class="inst-img"><div class="inst-info"><h4>Campo de Fútbol</h4><p>Espacio deportivo para el fomento a la salud.</p></div></div>
+        <div class="card inst-card"><img src="img/Control Escolar.jpeg" class="inst-img"><div class="inst-info"><h4>Control Escolar</h4><p>Atención administrativa, Dirección y Subdirección.</p></div></div>
+        <div class="card inst-card"><img src="img/Laboratorio.jpeg" class="inst-img"><div class="inst-info"><h4>Laboratorio de Cómputo</h4><p>Equipos modernos para prácticas tecnológicas.</p></div></div>
+        <div class="card inst-card"><img src="img/Orientacion.jpeg" class="inst-img"><div class="inst-info"><h4>Área de Orientación</h4><p>5 cubículos privados de atención personalizada.</p></div></div>
+        <div class="card inst-card"><img src="img/Sala de Maestros.jpeg" class="inst-img"><div class="inst-info"><h4>Sala de Maestros</h4><p>Espacio colegiado para planeación docente.</p></div></div>
+        <div class="card inst-card"><img src="img/Papeleria.jpeg" class="inst-img"><div class="inst-info"><h4>Servicios Escolares</h4><p>Papelería y materiales a disposición.</p></div></div>
+        <div class="card inst-card"><img src="img/Sanitarios.jpeg" class="inst-img"><div class="inst-info"><h4>Sanitarios</h4><p>Módulos sanitarios con mantenimiento constante.</p></div></div>
+    </div>
+</main>
+
+<!-- ══════════ UBICACIÓN ══════════ -->
+<main id="page-location" class="page">
+    <div class="section-header"><h2>Ubicación</h2></div>
+    <div class="grid-layout" style="grid-template-columns: 1fr 1fr;">
+        <div class="card" style="text-align: left; padding: 40px; background: var(--p-navy); color: white;">
+            <h3 style="color:var(--p-red); margin-bottom:20px; font-family:'Outfit'; font-size: 1.8rem;">Domicilio</h3>
+            <p style="font-size: 1.2rem; line-height: 2; opacity: 0.9;">
+                📍 Carr. Tenancingo, Zumpahuacan k.m 2.0,<br>
+                Col. Ejercito del Trabajo, C.P. 52400,<br>
+                Tenancingo, Estado de Mexico.
+            </p>
+        </div>
+        <div class="card" style="padding:0; overflow:hidden; border: 5px solid white;">
+            <img src="img/ubicacion.png" style="width:100%; height:100%; object-fit:cover;">
+        </div>
+    </div>
+</main>
+
+<!-- ══════════ MASCOTA ══════════ -->
+<main id="page-mascota" class="page">
+    <div class="section-header"><h2>Identidad Institucional</h2></div>
+    <div class="card" style="max-width: 600px; margin: 0 auto; padding: 20px;">
+        <img src="img/mascota.png" style="width:100%; border-radius:12px; box-shadow: var(--shadow);">
+        <h3 style="margin-top:25px; font-family:'Outfit'; color: var(--p-red); font-size: 2rem;">Orgullo EPO 381</h3>
+    </div>
+</main>
+
+<!-- ══════════ CALENDARIO ══════════ -->
+<main id="page-calendario" class="page">
+    <div class="section-header"><h2>Calendario Escolar 2025 - 2026</h2></div>
+    <div class="calendar-container">
+        <img src="img/calendario.jpeg" alt="Calendario Escolar">
+    </div>
+</main>
+
+<!-- ══════════ CONTACTO ══════════ -->
+<main id="page-contacto" class="page">
+    <div class="section-header"><h2>Atención Ciudadana</h2></div>
+    <div class="grid-layout">
+        <div class="card" style="padding: 40px; border-top: 8px solid var(--p-blue);">
+            <h3 style="font-family:'Outfit'; margin-bottom: 15px;">📞 TELÉFONO</h3>
+            <p style="font-size: 1.8rem; font-weight: 800; color: var(--p-blue);">(714) 688 70 01</p>
+        </div>
+        <div class="card" style="padding: 40px; border-top: 8px solid var(--p-red);">
+            <h3 style="font-family:'Outfit'; margin-bottom: 15px;">✉️ CORREO</h3>
+            <p style="font-size: 1.3rem; font-weight: 800; color: var(--p-red);">epoanten@edugem.gob.mx</p>
+        </div>
+    </div>
+</main>
+
+<!-- ══════════ LOGIN ══════════ -->
+<main id="page-login" class="page">
+    <div class="card" style="max-width: 470px; margin: 0 auto; padding: 50px; border-top: 10px solid var(--p-red);">
+        <h3 id="l-title" style="margin-bottom: 10px; font-family: 'Outfit'; font-size: 1.8rem;">Iniciar Sesión</h3>
+        <p id="l-hint" class="login-hint"></p>
+        <div id="login-error" class="login-error">❌ Usuario, contraseña o rol incorrecto. Verifica tus datos.</div>
+        <input id="login-usuario"  type="text"     placeholder="Número de Cuenta / Usuario" style="width:100%; padding:15px; margin-bottom:15px; border:2px solid #eee; border-radius:10px; font-family:inherit; font-size:1rem;">
+        <input id="login-password" type="password" placeholder="Contraseña"                 style="width:100%; padding:15px; margin-bottom:25px; border:2px solid #eee; border-radius:10px; font-family:inherit; font-size:1rem;">
+        <button class="btn btn-red" style="width:100%;" onclick="processLogin()">Acceder al Sistema</button>
+    </div>
+</main>
+
+<!-- ══════════ PORTAL ALUMNOS ══════════ -->
+<main id="page-Alumnos" class="page" style="padding:0;background:#f1f5f9;min-height:100vh;">
+
+<!-- ══ MODAL: PRIMER INGRESO — DATOS OBLIGATORIOS ══ -->
+<div id="modal-primer-ingreso" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:9000;overflow-y:auto;padding:30px 16px;">
+    <div style="background:white;border-radius:16px;max-width:640px;margin:0 auto;overflow:hidden;box-shadow:0 24px 60px rgba(0,0,0,.3);">
+        <div style="background:var(--p-navy);padding:20px 28px;display:flex;align-items:center;gap:14px;">
+            <img src="img/Logo.png" style="height:46px;border-radius:50%;" onerror="this.style.display='none'">
+            <div>
+                <h2 style="color:white;font-family:'Outfit';font-size:1.1rem;margin:0;">¡Bienvenido al Portal Estudiantil!</h2>
+                <p style="color:rgba(255,255,255,.7);font-size:.8rem;margin:3px 0 0;">Antes de continuar, completa tus datos personales</p>
+            </div>
+        </div>
+        <div style="padding:24px 28px;">
+            <div style="background:#fef3c7;border:1.5px solid #f59e0b;border-radius:8px;padding:12px 16px;margin-bottom:20px;font-size:.84rem;color:#92400e;">
+                ⚠️ <strong>Datos obligatorios.</strong> No podrás acceder a las demás secciones hasta completar este formulario.
+            </div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:13px 18px;">
+                <div style="grid-column:1/-1;">
+                    <label class="fi-lbl">Nombre(s)*</label>
+                    <input class="fi-inp" id="fi-nombre" placeholder="Tu(s) nombre(s)">
+                </div>
+                <div><label class="fi-lbl">Primer apellido*</label><input class="fi-inp" id="fi-ap1" placeholder="Primer apellido"></div>
+                <div><label class="fi-lbl">Segundo apellido</label><input class="fi-inp" id="fi-ap2" placeholder="Segundo apellido"></div>
+                <div><label class="fi-lbl">Género*</label>
+                    <select class="fi-inp" id="fi-genero" style="cursor:pointer;">
+                        <option value="">-- Selecciona --</option>
+                        <option>MASCULINO</option><option>FEMENINO</option><option>NO ESPECIFICADO</option>
+                    </select>
+                </div>
+                <div><label class="fi-lbl">Fecha de nacimiento*</label><input class="fi-inp" id="fi-fecha-nac" type="date"></div>
+                <div><label class="fi-lbl">CURP*</label><input class="fi-inp" id="fi-curp" placeholder="18 caracteres" maxlength="18" style="text-transform:uppercase;"></div>
+                <div><label class="fi-lbl">Correo personal**</label><input class="fi-inp" id="fi-email" type="email" placeholder="correo@ejemplo.com"></div>
+                <div><label class="fi-lbl">País de nacimiento*</label><input class="fi-inp" id="fi-pais-nac" value="MÉXICO"></div>
+                <div><label class="fi-lbl">Estado de nacimiento*</label><input class="fi-inp" id="fi-estado-nac" value="MÉXICO"></div>
+                <div><label class="fi-lbl">Municipio de nacimiento*</label><input class="fi-inp" id="fi-municipio-nac" placeholder="Ej. Tenancingo"></div>
+                <div><label class="fi-lbl">Tipo de sangre</label>
+                    <select class="fi-inp" id="fi-sangre" style="cursor:pointer;">
+                        <option value="">-- Selecciona --</option>
+                        <option>A+</option><option>A-</option><option>B+</option><option>B-</option>
+                        <option>AB+</option><option>AB-</option><option>O+</option><option>O-</option>
+                    </select>
+                </div>
+                <div><label class="fi-lbl">Nombre del padre o tutor*</label><input class="fi-inp" id="fi-tutor" placeholder="Nombre completo"></div>
+                <div><label class="fi-lbl">Teléfono del tutor</label><input class="fi-inp" id="fi-tel-tutor" placeholder="10 dígitos" maxlength="10"></div>
+                <div style="grid-column:1/-1;">
+                    <label class="fi-lbl" style="margin-bottom:8px;display:block;">Indicadores sociales (opcional)</label>
+                    <div style="display:flex;gap:16px;flex-wrap:wrap;">
+                        <label style="display:flex;align-items:center;gap:6px;font-size:.83rem;cursor:pointer;"><input type="checkbox" id="fi-indigena" style="accent-color:var(--p-red);"> En grupo indígena</label>
+                        <label style="display:flex;align-items:center;gap:6px;font-size:.83rem;cursor:pointer;"><input type="checkbox" id="fi-dialecto" style="accent-color:var(--p-red);"> Habla dialecto</label>
+                        <label style="display:flex;align-items:center;gap:6px;font-size:.83rem;cursor:pointer;"><input type="checkbox" id="fi-madre-soltera" style="accent-color:var(--p-red);"> Madre soltera</label>
+                        <label style="display:flex;align-items:center;gap:6px;font-size:.83rem;cursor:pointer;"><input type="checkbox" id="fi-discapacidad" style="accent-color:var(--p-red);"> Con discapacidad</label>
+                        <label style="display:flex;align-items:center;gap:6px;font-size:.83rem;cursor:pointer;"><input type="checkbox" id="fi-debil-visual" style="accent-color:var(--p-red);"> Débil visual</label>
+                    </div>
+                </div>
+            </div>
+            <p style="font-size:.73rem;color:var(--p-gray);margin-top:12px;">(*) Datos obligatorios &nbsp; (**) Para cambiarlo después: Herramientas → Correo personal registrado</p>
+            <div style="margin-top:18px;display:flex;justify-content:flex-end;">
+                <button class="btn btn-red" style="padding:12px 32px;font-size:.92rem;" onclick="guardarPrimerIngreso()">💾 Guardar y continuar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .fi-lbl{display:block;font-size:.74rem;font-weight:700;color:var(--p-gray);margin-bottom:4px;text-transform:uppercase;letter-spacing:.04em;}
+    .fi-inp{width:100%;padding:9px 12px;border:1.5px solid #e2e8f0;border-radius:8px;font-family:inherit;font-size:.86rem;outline:none;box-sizing:border-box;color:var(--p-navy);transition:border-color .2s;background:white;}
+    .fi-inp:focus{border-color:var(--p-red);}
+
+    /* ── Layout portal ── */
+    #alumno-layout{display:flex;min-height:calc(100vh - 105px);}
+
+    /* ── Sidebar ── */
+    #alumno-sidebar{
+        width:220px;flex-shrink:0;
+        background:var(--p-navy);
+        display:flex;flex-direction:column;
+        padding:0;
+    }
+    .side-user{
+        background:var(--p-red);
+        padding:18px 16px;
+        display:flex;align-items:center;gap:10px;
+    }
+    .side-user-avatar{
+        width:44px;height:44px;border-radius:50%;
+        background:rgba(255,255,255,.2);
+        display:flex;align-items:center;justify-content:center;
+        font-size:1.3rem;flex-shrink:0;
+        border:2px solid rgba(255,255,255,.4);
+    }
+    .side-user-info h4{color:white;font-size:.82rem;font-weight:700;margin:0;line-height:1.3;}
+    .side-user-info p{color:rgba(255,255,255,.65);font-size:.72rem;margin:2px 0 0;}
+
+    .side-section-title{
+        padding:10px 16px 6px;
+        font-size:.66rem;font-weight:800;letter-spacing:.1em;
+        color:rgba(255,255,255,.35);text-transform:uppercase;
+    }
+    .side-item{
+        display:flex;align-items:center;gap:9px;
+        padding:11px 16px;cursor:pointer;
+        font-size:.83rem;font-weight:600;color:rgba(255,255,255,.7);
+        border-left:3px solid transparent;
+        transition:all .18s;user-select:none;
+    }
+    .side-item:hover{background:rgba(255,255,255,.08);color:white;border-left-color:rgba(255,255,255,.3);}
+    .side-item.side-active{background:rgba(255,255,255,.12);color:white;border-left-color:var(--p-red);}
+    .side-item .side-ico{font-size:1rem;width:20px;text-align:center;flex-shrink:0;}
+    .side-divider{height:1px;background:rgba(255,255,255,.08);margin:6px 0;}
+
+    /* ── Contenido central ── */
+    #alumno-content{
+        flex:1;padding:28px;overflow-y:auto;
+        display:flex;flex-direction:column;gap:20px;
+    }
+    .al-panel{display:none;}
+    .al-panel.al-active{display:block;}
+
+    /* ── Panel header ── */
+    .al-panel-header{
+        background:var(--p-navy);border-radius:10px 10px 0 0;
+        padding:13px 20px;display:flex;align-items:center;gap:12px;
+    }
+    .al-panel-header span{font-size:1.3rem;}
+    .al-panel-header h3{color:white;font-family:'Outfit';font-size:1rem;margin:0;font-weight:700;}
+
+    /* ── Tabla estilo UAEM ── */
+    .al-table{width:100%;border-collapse:collapse;font-size:.86rem;}
+    .al-table thead th{
+        background:#c8b560;padding:9px 16px;
+        font-weight:700;color:#1e293b;font-size:.78rem;text-transform:uppercase;letter-spacing:.04em;
+    }
+    .al-table thead th:first-child{text-align:right;}
+    .al-table tbody tr:nth-child(odd){background:#fafaf5;}
+    .al-table tbody tr:nth-child(even){background:#f0ecce;}
+    .al-table tbody td{padding:8px 16px;border-bottom:1px solid #e8e0b0;color:var(--p-navy);}
+    .al-table tbody td:first-child{text-align:right;font-weight:700;width:44%;}
+    .al-table tbody td:last-child{color:var(--p-gray);}
+
+    /* ── Calificaciones tabla ── */
+    .cal-table{width:100%;border-collapse:collapse;background:white;border-radius:0 0 10px 10px;overflow:hidden;}
+    .cal-table thead th{background:var(--p-navy);color:white;padding:12px 18px;text-align:left;font-size:.77rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;}
+    .cal-table tbody td{padding:12px 18px;border-bottom:1px solid #f1f5f9;font-size:.9rem;color:var(--p-navy);}
+    .cal-table tbody tr:hover{background:#f8fafc;}
+
+    /* ── Form fields ── */
+    .al-lbl{display:block;font-size:.73rem;font-weight:700;color:var(--p-gray);margin-bottom:4px;text-transform:uppercase;letter-spacing:.04em;}
+    .al-inp{width:100%;padding:9px 12px;border:1.5px solid #e2e8f0;border-radius:8px;font-family:inherit;font-size:.86rem;outline:none;box-sizing:border-box;color:var(--p-navy);transition:border-color .2s;background:white;}
+    .al-inp:focus{border-color:var(--p-red);}
+
+    /* ── Boleta print ── */
+    @media print{
+        body > *{display:none!important;}
+        #boleta-print-window{display:block!important;position:fixed;inset:0;background:white;z-index:99999;padding:20px;}
+    }
+    #boleta-print-window{display:none;}
+
+    @media(max-width:700px){
+        #alumno-sidebar{width:60px;}
+        .side-item span:not(.side-ico){display:none;}
+        .side-user-info,.side-section-title{display:none;}
+    }
+</style>
+
+<!-- ══ NAV HORIZONTAL ALUMNO ══ -->
+<div id="alumno-horiz-nav">
+    <div class="ahnav-item ahnav-active" data-section="inicio" onclick="aluNav(this,'inicio')">
+        <span>🏠</span> Inicio
+    </div>
+    <div class="ahnav-item" data-section="datos-gen" onclick="aluNav(this,'datos-gen')">
+        <span>👤</span> Datos Generales
+    </div>
+    <div class="ahnav-item" data-section="domicilio" onclick="aluNav(this,'domicilio')">
+        <span>🏘️</span> Domicilio
+    </div>
+    <div class="ahnav-item" data-section="procedencia" onclick="aluNav(this,'procedencia')">
+        <span>🏫</span> Procedencia
+    </div>
+    <div class="ahnav-item" data-section="calificaciones" onclick="aluNav(this,'calificaciones')">
+        <span>📊</span> Calificaciones
+    </div>
+    <div class="ahnav-item" data-section="boleta" onclick="aluNav(this,'boleta')">
+        <span>📋</span> Boleta
+    </div>
+    <div class="ahnav-item" data-section="reportes-al" onclick="aluNav(this,'reportes-al')">
+        <span>📝</span> Reportes
+    </div>
+</div>
+<!-- Contenido horizontal alumno -->
+<div id="alu-content-wrap">
+<!-- sidebar oculto por compatibilidad -->
+<!-- ══ PANELS ALUMNO HORIZONTAL ══ -->
+<div id="alu-panels-wrap" style="padding:24px 30px;display:flex;flex-direction:column;gap:20px;">
+
+
+        <!-- ══ INICIO: Solo indicador de riesgo ══ -->
+        <div id="al-inicio" class="al-panel al-active">
+            <!-- Barra de bienvenida horizontal -->
+            <div class="alu-welcome">
+                <div>
+                    <h2>Bienvenido, <span id="alu-nombre2">—</span></h2>
+                    <p>Semestre: <strong id="alu-semestre2">—</strong></p>
+                </div>
+                <div class="alu-welcome-right">
+                    EPO 381 Tenancingo<br>
+                    Promedio general: <strong id="alu-prom2" style="color:#fbbf24;">—</strong><br>
+                    <span id="alu-fecha2" style="opacity:.7;"></span>
+                </div>
+            </div>
+            <!-- Saludo original (oculto para no duplicar) -->
+            <div style="display:none;background:white;border-radius:12px;padding:20px 26px;box-shadow:var(--shadow);display:none;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;">
+                <div>
+                    <h2 style="font-family:'Outfit';color:var(--p-navy);margin:0;font-size:1.25rem;">Bienvenido, <span id="alumno-nombre">—</span></h2>
+                    <p style="color:var(--p-gray);font-size:.86rem;margin:4px 0 0;">Semestre: <strong id="alumno-semestre"></strong> &nbsp;·&nbsp; Promedio: <strong id="alumno-promedio" style="color:var(--p-navy);font-size:1.05rem;"></strong></p>
+                </div>
+                <div style="text-align:right;font-size:.8rem;color:var(--p-gray);">
+                    EPO 381 Tenancingo<br><span id="side-fecha"></span>
+                </div>
+            </div>
+
+            <!-- INDICADOR DE RIESGO -->
+            <div style="background:white;border-radius:12px;box-shadow:var(--shadow);padding:26px 30px;">
+                <h3 style="font-family:'Outfit';color:var(--p-navy);font-size:.88rem;margin-bottom:14px;text-align:center;letter-spacing:.09em;text-transform:uppercase;font-weight:800;">INDICADORES DE RIESGO ACADÉMICO</h3>
+
+                <div style="display:flex;flex-direction:column;align-items:center;">
+                    <!-- Info box arriba derecha -->
+                    <div style="width:100%;display:flex;justify-content:flex-end;margin-bottom:4px;">
+                        <div style="border:1.5px solid #374151;border-radius:4px;padding:10px 15px;font-size:.82rem;color:#1e293b;line-height:1.9;background:#fff;min-width:230px;">
+                            <div>Grado de avance: <strong id="ri-avance">—</strong></div>
+                            <div>Promedio general: <strong id="ri-promedio">—</strong></div>
+                            <div>Promedio último periodo: <strong id="ri-ultimo">—</strong></div>
+                            <div>Situación actual: <strong id="ri-situacion">—</strong></div>
+                            <div>Actualización: <strong id="ri-fecha">—</strong></div>
+                        </div>
+                    </div>
+                    <!-- Banderas -->
+                    <div style="position:relative;width:100%;padding-bottom:6px;">
+                        <div style="position:absolute;bottom:0;left:0;right:0;height:3px;background:var(--p-navy);"></div>
+                        <div style="display:flex;align-items:flex-end;justify-content:center;gap:0;">
+                            <div class="risk-item" data-level="0" style="display:flex;flex-direction:column;align-items:center;padding:6px 18px 8px;transition:all .25s;border-radius:8px;">
+                                <div style="position:relative;width:52px;height:80px;"><div style="position:absolute;left:7px;top:0;width:3px;height:100%;background:#9ca3af;border-radius:1px;"></div><div class="risk-flag-shape" style="position:absolute;left:9px;top:10px;width:43px;height:26px;background:#d1d5db;clip-path:polygon(0 0,80% 0,100% 25%,80% 50%,100% 75%,80% 100%,0 100%);transition:all .3s;"></div></div>
+                                <span style="font-size:.75rem;font-weight:700;color:#9ca3af;margin-top:5px;text-align:center;">Baja</span>
+                            </div>
+                            <div class="risk-item" data-level="1" style="display:flex;flex-direction:column;align-items:center;padding:6px 18px 8px;transition:all .25s;border-radius:8px;">
+                                <div style="position:relative;width:52px;height:80px;"><div style="position:absolute;left:7px;top:0;width:3px;height:100%;background:#9ca3af;border-radius:1px;"></div><div class="risk-flag-shape" style="position:absolute;left:9px;top:10px;width:43px;height:26px;background:#fecaca;clip-path:polygon(0 0,80% 0,100% 25%,80% 50%,100% 75%,80% 100%,0 100%);transition:all .3s;"></div></div>
+                                <span style="font-size:.75rem;font-weight:700;color:#9ca3af;margin-top:5px;text-align:center;">Riesgo<br>alto</span>
+                            </div>
+                            <div class="risk-item" data-level="2" style="display:flex;flex-direction:column;align-items:center;padding:6px 18px 8px;transition:all .25s;border-radius:8px;">
+                                <div style="position:relative;width:52px;height:80px;"><div style="position:absolute;left:7px;top:0;width:3px;height:100%;background:#9ca3af;border-radius:1px;"></div><div class="risk-flag-shape" style="position:absolute;left:9px;top:10px;width:43px;height:26px;background:#fde68a;clip-path:polygon(0 0,80% 0,100% 25%,80% 50%,100% 75%,80% 100%,0 100%);transition:all .3s;"></div></div>
+                                <span style="font-size:.75rem;font-weight:700;color:#9ca3af;margin-top:5px;text-align:center;">Riesgo<br>medio</span>
+                            </div>
+                            <div class="risk-item" data-level="3" style="display:flex;flex-direction:column;align-items:center;padding:6px 18px 8px;transition:all .25s;border-radius:8px;">
+                                <div style="position:relative;width:52px;height:80px;"><div style="position:absolute;left:7px;top:0;width:3px;height:100%;background:#9ca3af;border-radius:1px;"></div><div class="risk-flag-shape" style="position:absolute;left:9px;top:10px;width:43px;height:26px;background:#bbf7d0;clip-path:polygon(0 0,80% 0,100% 25%,80% 50%,100% 75%,80% 100%,0 100%);transition:all .3s;"></div></div>
+                                <span style="font-size:.75rem;font-weight:700;color:#9ca3af;margin-top:5px;text-align:center;">Riesgo<br>bajo</span>
+                            </div>
+                            <div class="risk-item" data-level="4" style="display:flex;flex-direction:column;align-items:center;padding:6px 18px 8px;transition:all .25s;border-radius:8px;">
+                                <div style="position:relative;width:52px;height:80px;"><div style="position:absolute;left:7px;top:0;width:3px;height:100%;background:#9ca3af;border-radius:1px;"></div><div class="risk-flag-shape" style="position:absolute;left:9px;top:10px;width:43px;height:26px;background:#4ade80;clip-path:polygon(0 0,80% 0,100% 25%,80% 50%,100% 75%,80% 100%,0 100%);transition:all .3s;"></div></div>
+                                <span style="font-size:.75rem;font-weight:700;color:#9ca3af;margin-top:5px;text-align:center;">Sin<br>riesgo</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ══ DATOS GENERALES ══ -->
+        <div id="al-datos-gen" class="al-panel">
+            <div style="background:white;border-radius:12px;overflow:hidden;box-shadow:var(--shadow);">
+                <div class="al-panel-header"><span>👤</span><h3>Datos generales</h3>
+                    <button id="btn-editar-dg" onclick="toggleEditDG()" style="margin-left:auto;padding:6px 16px;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.4);color:white;border-radius:7px;cursor:pointer;font-size:.78rem;font-weight:700;">✏️ Editar</button>
+                </div>
+                <!-- Vista tabla -->
+                <div id="dg-view">
+                    <table class="al-table">
+                        <thead><tr><th style="text-align:right;">Campo</th><th style="text-align:left;">Valor</th></tr></thead>
+                        <tbody id="dg-tbody"></tbody>
+                    </table>
+                    <div style="padding:10px 18px;font-size:.73rem;color:var(--p-gray);border-top:1px solid #f1f5f9;">(*) Datos obligatorios &nbsp;·&nbsp; (**) Para cambiar correo: Herramientas → Correo personal registrado</div>
+                </div>
+                <!-- Formulario edición -->
+                <div id="dg-edit" style="display:none;padding:22px 24px;">
+                    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px 20px;">
+                        <div><label class="al-lbl">Primer apellido*</label><input class="al-inp" id="dg-ap1"></div>
+                        <div><label class="al-lbl">Segundo apellido</label><input class="al-inp" id="dg-ap2"></div>
+                        <div><label class="al-lbl">Nombre(s)*</label><input class="al-inp" id="dg-nombre-c"></div>
+                        <div><label class="al-lbl">Género*</label>
+                            <select class="al-inp" id="dg-genero" style="cursor:pointer;"><option>MASCULINO</option><option>FEMENINO</option><option>NO ESPECIFICADO</option></select>
+                        </div>
+                        <div><label class="al-lbl">Fecha de nacimiento</label><input class="al-inp" id="dg-fecha-nac" type="date"></div>
+                        <div><label class="al-lbl">CURP*</label><input class="al-inp" id="dg-curp" maxlength="18" style="text-transform:uppercase;"></div>
+                        <div><label class="al-lbl">Correo personal**</label><input class="al-inp" id="dg-email" type="email"></div>
+                        <div><label class="al-lbl">Municipio de nacimiento</label><input class="al-inp" id="dg-municipio-nac"></div>
+                        <div><label class="al-lbl">Tipo de sangre</label>
+                            <select class="al-inp" id="dg-sangre" style="cursor:pointer;"><option value="">—</option><option>A+</option><option>A-</option><option>B+</option><option>B-</option><option>AB+</option><option>AB-</option><option>O+</option><option>O-</option></select>
+                        </div>
+                        <div><label class="al-lbl">Nombre del tutor*</label><input class="al-inp" id="dg-tutor"></div>
+                        <div style="grid-column:1/-1;">
+                            <label class="al-lbl" style="margin-bottom:8px;display:block;">Indicadores sociales</label>
+                            <div style="display:flex;gap:16px;flex-wrap:wrap;">
+                                <label style="display:flex;align-items:center;gap:6px;font-size:.83rem;cursor:pointer;"><input type="checkbox" id="dg-indigena" style="accent-color:var(--p-red);"> En grupo indígena</label>
+                                <label style="display:flex;align-items:center;gap:6px;font-size:.83rem;cursor:pointer;"><input type="checkbox" id="dg-dialecto" style="accent-color:var(--p-red);"> Habla dialecto</label>
+                                <label style="display:flex;align-items:center;gap:6px;font-size:.83rem;cursor:pointer;"><input type="checkbox" id="dg-madre-soltera" style="accent-color:var(--p-red);"> Madre soltera</label>
+                                <label style="display:flex;align-items:center;gap:6px;font-size:.83rem;cursor:pointer;"><input type="checkbox" id="dg-discapacidad" style="accent-color:var(--p-red);"> Con discapacidad</label>
+                                <label style="display:flex;align-items:center;gap:6px;font-size:.83rem;cursor:pointer;"><input type="checkbox" id="dg-debil-visual" style="accent-color:var(--p-red);"> Débil visual</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="margin-top:16px;display:flex;gap:10px;">
+                        <button class="btn btn-red" onclick="guardarDG()">💾 Guardar</button>
+                        <button class="btn" style="background:#e2e8f0;color:var(--p-navy);border:none;" onclick="toggleEditDG()">Cancelar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ══ DOMICILIO ══ -->
+        <div id="al-domicilio" class="al-panel">
+            <div style="background:white;border-radius:12px;overflow:hidden;box-shadow:var(--shadow);">
+                <div class="al-panel-header"><span>🏠</span><h3>Domicilio</h3>
+                    <button onclick="toggleEditDom()" style="margin-left:auto;padding:6px 16px;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.4);color:white;border-radius:7px;cursor:pointer;font-size:.78rem;font-weight:700;">✏️ Editar</button>
+                </div>
+                <div id="dom-view">
+                    <table class="al-table"><thead><tr><th style="text-align:right;">Campo</th><th style="text-align:left;">Valor</th></tr></thead><tbody id="dom-tbody"></tbody></table>
+                    <p style="padding:10px 18px;font-size:.73rem;color:var(--p-gray);border-top:1px solid #f1f5f9;">(*) Datos obligatorios</p>
+                </div>
+                <div id="dom-edit" style="display:none;padding:22px 24px;">
+                    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px 20px;">
+                        <div style="grid-column:1/-1;"><label class="al-lbl">Calle*</label><input class="al-inp" id="dom-calle" placeholder="Nombre de la calle"></div>
+                        <div><label class="al-lbl">Colonia</label><input class="al-inp" id="dom-colonia" placeholder="Colonia"></div>
+                        <div><label class="al-lbl">Población</label><input class="al-inp" id="dom-poblacion" placeholder="Población"></div>
+                        <div><label class="al-lbl">Código postal</label><input class="al-inp" id="dom-cp" placeholder="Ej. 52400" maxlength="6"></div>
+                        <div><label class="al-lbl">Teléfono</label><input class="al-inp" id="dom-tel" placeholder="10 dígitos" maxlength="10"></div>
+                        <div><label class="al-lbl">País*</label><input class="al-inp" id="dom-pais" value="MÉXICO"></div>
+                        <div><label class="al-lbl">Estado*</label><input class="al-inp" id="dom-estado" value="MÉXICO"></div>
+                        <div><label class="al-lbl">Municipio*</label><input class="al-inp" id="dom-municipio" placeholder="Ej. Tenancingo"></div>
+                    </div>
+                    <div style="margin-top:16px;display:flex;gap:10px;">
+                        <button class="btn btn-red" onclick="guardarDomicilio()">💾 Guardar</button>
+                        <button class="btn" style="background:#e2e8f0;color:var(--p-navy);border:none;" onclick="toggleEditDom()">Cancelar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ══ PROCEDENCIA ══ -->
+        <div id="al-procedencia" class="al-panel">
+            <div style="background:white;border-radius:12px;overflow:hidden;box-shadow:var(--shadow);">
+                <div class="al-panel-header"><span>🏫</span><h3>Procedencia — Egresados de Secundaria / Telesecundaria</h3>
+                    <button onclick="toggleEditProc()" style="margin-left:auto;padding:6px 16px;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.4);color:white;border-radius:7px;cursor:pointer;font-size:.78rem;font-weight:700;">✏️ Editar</button>
+                </div>
+                <div id="proc-view">
+                    <div id="proc-view-empty" style="padding:30px;text-align:center;color:var(--p-gray);">No hay datos de procedencia registrados. Haz clic en <strong>Editar</strong> para agregarlos.</div>
+                    <table class="al-table" id="proc-view-table" style="display:none;"><thead><tr><th style="text-align:right;">Campo</th><th style="text-align:left;">Valor</th></tr></thead><tbody id="proc-tbody"></tbody></table>
+                </div>
+                <div id="proc-edit" style="display:none;padding:22px 24px;">
+                    <div style="margin-bottom:16px;">
+                        <label class="al-lbl" style="margin-bottom:8px;display:block;">Tipo de escuela*</label>
+                        <div style="display:flex;gap:10px;flex-wrap:wrap;">
+                            <label id="lbl-sec"  onclick="selecTipo('secundaria')"    style="display:flex;align-items:center;gap:7px;cursor:pointer;padding:9px 16px;border:2px solid #e2e8f0;border-radius:8px;font-weight:600;font-size:.83rem;color:var(--p-navy);transition:.2s;background:white;"><input type="radio" name="tipo-escuela" value="secundaria"    id="rb-sec"  style="accent-color:var(--p-red);">🏛️ Secundaria General</label>
+                            <label id="lbl-tele" onclick="selecTipo('telesecundaria')" style="display:flex;align-items:center;gap:7px;cursor:pointer;padding:9px 16px;border:2px solid #e2e8f0;border-radius:8px;font-weight:600;font-size:.83rem;color:var(--p-navy);transition:.2s;background:white;"><input type="radio" name="tipo-escuela" value="telesecundaria" id="rb-tele" style="accent-color:var(--p-red);">📡 Telesecundaria</label>
+                            <label id="lbl-tec"  onclick="selecTipo('tecnica')"        style="display:flex;align-items:center;gap:7px;cursor:pointer;padding:9px 16px;border:2px solid #e2e8f0;border-radius:8px;font-weight:600;font-size:.83rem;color:var(--p-navy);transition:.2s;background:white;"><input type="radio" name="tipo-escuela" value="tecnica"       id="rb-tec"  style="accent-color:var(--p-red);">🔧 Secundaria Técnica</label>
+                        </div>
+                    </div>
+                    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px 20px;">
+                        <div style="grid-column:1/-1;"><label class="al-lbl">Nombre de la escuela*</label><input class="al-inp" id="proc-nombre-esc" placeholder="Nombre completo de la escuela"></div>
+                        <div><label class="al-lbl">Clave CCT</label><input class="al-inp" id="proc-cct" placeholder="Ej. 15EES0001A" maxlength="12"></div>
+                        <div><label class="al-lbl">Municipio*</label><input class="al-inp" id="proc-municipio" placeholder="Ej. Tenancingo"></div>
+                        <div><label class="al-lbl">Estado</label><input class="al-inp" id="proc-estado" value="Estado de México"></div>
+                        <div><label class="al-lbl">Promedio de egreso</label><input class="al-inp" id="proc-promedio-egreso" type="number" min="6" max="10" step="0.1"></div>
+                        <div><label class="al-lbl">Año de egreso</label><input class="al-inp" id="proc-anio-egreso" type="number" min="2010" max="2030"></div>
+                        <div style="grid-column:1/-1;"><label class="al-lbl">Nombre del director(a)</label><input class="al-inp" id="proc-director" placeholder="Nombre del director(a)"></div>
+                    </div>
+                    <div style="margin-top:16px;display:flex;gap:10px;">
+                        <button class="btn btn-red" onclick="guardarProcedencia()">💾 Guardar</button>
+                        <button class="btn" style="background:#e2e8f0;color:var(--p-navy);border:none;" onclick="toggleEditProc()">Cancelar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ══ CALIFICACIONES ══ -->
+        <div id="al-calificaciones" class="al-panel">
+            <div style="background:white;border-radius:12px;overflow:hidden;box-shadow:var(--shadow);">
+                <div class="al-panel-header"><span>📊</span><h3>Consulta de Calificaciones</h3></div>
+                <div style="padding:16px 20px;border-bottom:1px solid #f1f5f9;display:flex;gap:10px;flex-wrap:wrap;align-items:center;">
+                    <label style="font-weight:700;font-size:.83rem;color:var(--p-navy);">Filtrar:</label>
+                    <select id="cal-filtro-semestre" class="al-inp" style="width:auto;padding:8px 12px;cursor:pointer;">
+                        <option value="all">Todos los semestres</option>
+                        <option value="1">1° Semestre</option><option value="2">2° Semestre</option>
+                        <option value="3">3° Semestre</option><option value="4">4° Semestre</option>
+                        <option value="5">5° Semestre</option><option value="6">6° Semestre</option>
+                    </select>
+                    <select id="cal-filtro-parcial" class="al-inp" style="width:auto;padding:8px 12px;cursor:pointer;">
+                        <option value="all">Todos los parciales</option>
+                        <option value="p1">Parcial 1</option><option value="p2">Parcial 2</option><option value="p3">Parcial 3</option>
+                    </select>
+                    <button onclick="filtrarCalificaciones()" class="btn btn-blue" style="padding:8px 20px;font-size:.83rem;">🔍 Aplicar</button>
+                </div>
+                <table class="cal-table">
+                    <thead><tr id="cal-thead-row">
+                        <th>Materia</th><th>Parcial 1</th><th>Parcial 2</th><th>Parcial 3</th><th>Promedio Final</th>
+                    </tr></thead>
+                    <tbody id="tabla-calificaciones"></tbody>
+                </table>
+                <div id="cal-resumen-parcial" style="display:none;padding:16px 20px;border-top:1px solid #f1f5f9;background:#f8fafc;">
+                    <h4 style="font-family:'Outfit';color:var(--p-navy);margin-bottom:12px;font-size:.95rem;" id="cal-resumen-titulo">Resumen</h4>
+                    <div style="display:flex;gap:28px;flex-wrap:wrap;">
+                        <div style="text-align:center;"><div style="font-size:1.8rem;font-weight:900;color:var(--p-navy);" id="cal-res-prom">—</div><div style="font-size:.73rem;color:var(--p-gray);font-weight:700;text-transform:uppercase;">Promedio</div></div>
+                        <div style="text-align:center;"><div style="font-size:1.8rem;font-weight:900;color:#16a34a;" id="cal-res-aprov">—</div><div style="font-size:.73rem;color:var(--p-gray);font-weight:700;text-transform:uppercase;">Aprobadas</div></div>
+                        <div style="text-align:center;"><div style="font-size:1.8rem;font-weight:900;color:#dc2626;" id="cal-res-rep">—</div><div style="font-size:.73rem;color:var(--p-gray);font-weight:700;text-transform:uppercase;">Reprobadas</div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ══ BOLETA ══ -->
+        <div id="al-boleta" class="al-panel">
+            <div style="background:white;border-radius:12px;overflow:hidden;box-shadow:var(--shadow);">
+                <div class="al-panel-header"><span>📋</span><h3>Boleta de Calificaciones</h3>
+                    <div style="margin-left:auto;display:flex;gap:8px;">
+                        <button onclick="imprimirBoleta()" style="padding:6px 14px;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.4);color:white;border-radius:7px;cursor:pointer;font-size:.78rem;font-weight:700;">🖨️ Imprimir</button>
+                        <button onclick="exportarBoleta()" style="padding:6px 14px;background:var(--p-red);border:none;color:white;border-radius:7px;cursor:pointer;font-size:.78rem;font-weight:700;">📤 Exportar</button>
+                    </div>
+                </div>
+                <div style="padding:28px;" id="boleta-content">
+                    <!-- Encabezado boleta -->
+                    <div style="display:flex;align-items:center;gap:16px;border-bottom:3px solid var(--p-navy);padding-bottom:14px;margin-bottom:16px;">
+                        <img src="img/Logo.png" style="height:56px;border-radius:50%;" onerror="this.style.display='none'">
+                        <div style="flex:1;">
+                            <div style="font-family:'Outfit';font-size:1.05rem;font-weight:800;color:var(--p-navy);">Escuela Preparatoria Oficial Núm. 381</div>
+                            <div style="font-size:.75rem;color:var(--p-gray);">C.C.T. 15EBP0025F &nbsp;·&nbsp; Tenancingo, Estado de México &nbsp;·&nbsp; Ciclo 2025-2026</div>
+                        </div>
+                        <div style="text-align:right;font-size:.76rem;color:var(--p-gray);">
+                            <div style="font-weight:800;color:var(--p-navy);font-size:.88rem;text-transform:uppercase;letter-spacing:.06em;">Boleta de Calificaciones</div>
+                            <div id="bol-fecha-gen"></div>
+                        </div>
+                    </div>
+                    <!-- Datos alumno en boleta -->
+                    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:7px 20px;margin-bottom:16px;font-size:.82rem;background:#f8fafc;padding:12px 16px;border-radius:8px;">
+                        <div><span style="color:var(--p-gray);font-weight:600;">Alumno: </span><span id="bol-nombre" style="font-weight:700;color:var(--p-navy);"></span></div>
+                        <div><span style="color:var(--p-gray);font-weight:600;">Matrícula: </span><span id="bol-id" style="font-weight:700;color:var(--p-navy);"></span></div>
+                        <div><span style="color:var(--p-gray);font-weight:600;">Semestre/Grupo: </span><span id="bol-sem" style="font-weight:700;color:var(--p-navy);"></span></div>
+                        <div><span style="color:var(--p-gray);font-weight:600;">Turno: </span><span style="font-weight:700;color:var(--p-navy);">Matutino</span></div>
+                        <div><span style="color:var(--p-gray);font-weight:600;">Situación: </span><span id="bol-sit" style="font-weight:700;color:var(--p-navy);"></span></div>
+                        <div><span style="color:var(--p-gray);font-weight:600;">Promedio: </span><span id="bol-prom" style="font-weight:900;color:var(--p-navy);font-size:1.05rem;"></span></div>
+                    </div>
+                    <!-- Tabla calificaciones boleta -->
+                    <table style="width:100%;border-collapse:collapse;font-size:.81rem;">
+                        <thead><tr style="background:var(--p-navy);color:white;">
+                            <th style="padding:9px 14px;text-align:left;font-size:.73rem;text-transform:uppercase;letter-spacing:.05em;">Asignatura</th>
+                            <th style="padding:9px 14px;text-align:center;font-size:.73rem;text-transform:uppercase;letter-spacing:.05em;">P1</th>
+                            <th style="padding:9px 14px;text-align:center;font-size:.73rem;text-transform:uppercase;letter-spacing:.05em;">P2</th>
+                            <th style="padding:9px 14px;text-align:center;font-size:.73rem;text-transform:uppercase;letter-spacing:.05em;">P3</th>
+                            <th style="padding:9px 14px;text-align:center;font-size:.73rem;text-transform:uppercase;letter-spacing:.05em;">Final</th>
+                            <th style="padding:9px 14px;text-align:center;font-size:.73rem;text-transform:uppercase;letter-spacing:.05em;">Estatus</th>
+                        </tr></thead>
+                        <tbody id="bol-tbody"></tbody>
+                        <tfoot><tr style="background:#1e293b;color:white;">
+                            <td colspan="4" style="padding:9px 14px;text-align:right;font-weight:700;">PROMEDIO GENERAL</td>
+                            <td id="bol-prom-final" style="padding:9px 14px;text-align:center;font-weight:900;font-size:1.05rem;"></td>
+                            <td></td>
+                        </tr></tfoot>
+                    </table>
+                    <!-- Firmas -->
+                    <div style="display:flex;justify-content:space-around;margin-top:36px;flex-wrap:wrap;gap:20px;">
+                        <div style="text-align:center;font-size:.74rem;color:var(--p-gray);"><div style="width:155px;border-top:1px solid #1e293b;margin:0 auto 5px;"></div>Director General</div>
+                        <div style="text-align:center;font-size:.74rem;color:var(--p-gray);"><div style="width:155px;border-top:1px solid #1e293b;margin:0 auto 5px;"></div>Control Escolar</div>
+                        <div style="text-align:center;font-size:.74rem;color:var(--p-gray);"><div style="width:155px;border-top:1px solid #1e293b;margin:0 auto 5px;"></div>Orientadora Educativa</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ══ REPORTES — Solo mala conducta ══ -->
+        <div id="al-reportes-al" class="al-panel">
+            <div style="background:white;border-radius:12px;overflow:hidden;box-shadow:var(--shadow);">
+                <div class="al-panel-header"><span>📝</span><h3>Reportes de Conducta</h3>
+                    <button onclick="toggleFormReporte()" style="margin-left:auto;padding:6px 14px;background:var(--p-red);border:none;color:white;border-radius:7px;cursor:pointer;font-size:.78rem;font-weight:700;">+ Nuevo reporte</button>
+                </div>
+                <!-- Stats -->
+                <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-bottom:1px solid #f1f5f9;">
+                    <div style="padding:16px;text-align:center;border-right:1px solid #f1f5f9;">
+                        <div style="font-size:1.8rem;font-weight:900;color:var(--p-navy);" id="rp-total">0</div>
+                        <div style="font-size:.72rem;color:var(--p-gray);font-weight:700;text-transform:uppercase;letter-spacing:.04em;">Total</div>
+                    </div>
+                    <div style="padding:16px;text-align:center;border-right:1px solid #f1f5f9;">
+                        <div style="font-size:1.8rem;font-weight:900;color:#f59e0b;" id="rp-pendientes">0</div>
+                        <div style="font-size:.72rem;color:var(--p-gray);font-weight:700;text-transform:uppercase;letter-spacing:.04em;">Pendientes</div>
+                    </div>
+                    <div style="padding:16px;text-align:center;">
+                        <div style="font-size:1.8rem;font-weight:900;color:#16a34a;" id="rp-resueltos">0</div>
+                        <div style="font-size:.72rem;color:var(--p-gray);font-weight:700;text-transform:uppercase;letter-spacing:.04em;">Atendidos</div>
+                    </div>
+                </div>
+                <!-- Tabla reportes -->
+                <div style="overflow-x:auto;">
+                    <table style="width:100%;border-collapse:collapse;font-size:.84rem;">
+                        <thead><tr style="background:var(--p-navy);">
+                            <th style="padding:11px 16px;text-align:left;color:white;font-size:.74rem;text-transform:uppercase;letter-spacing:.05em;">Fecha</th>
+                            <th style="padding:11px 16px;text-align:left;color:white;font-size:.74rem;text-transform:uppercase;letter-spacing:.05em;">Tipo de falta</th>
+                            <th style="padding:11px 16px;text-align:left;color:white;font-size:.74rem;text-transform:uppercase;letter-spacing:.05em;">Descripción</th>
+                            <th style="padding:11px 16px;text-align:left;color:white;font-size:.74rem;text-transform:uppercase;letter-spacing:.05em;">Reportó</th>
+                            <th style="padding:11px 16px;text-align:center;color:white;font-size:.74rem;text-transform:uppercase;letter-spacing:.05em;">Estado</th>
+                        </tr></thead>
+                        <tbody id="rp-tbody"></tbody>
+                    </table>
+                </div>
+                <!-- Formulario nuevo reporte de conducta -->
+                <div id="form-reporte-conducta" style="display:none;padding:22px 24px;border-top:3px solid var(--p-red);background:#fdf2f2;">
+                    <h4 style="font-family:'Outfit';color:var(--p-navy);margin-bottom:14px;">📋 Registro de reporte de conducta</h4>
+                    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px 20px;">
+                        <div><label class="al-lbl">Tipo de falta*</label>
+                            <select class="al-inp" id="rep-tipo-conducta" style="cursor:pointer;">
+                                <option value="">-- Selecciona --</option>
+                                <option>Falta de respeto a docente</option>
+                                <option>Falta de respeto a compañero</option>
+                                <option>Daño a instalaciones</option>
+                                <option>Uso inadecuado de dispositivos</option>
+                                <option>Acoso escolar (bullying)</option>
+                                <option>Agresión física</option>
+                                <option>Lenguaje inapropiado</option>
+                                <option>Desobediencia a autoridades</option>
+                                <option>Otra conducta inadecuada</option>
+                            </select>
+                        </div>
+                        <div><label class="al-lbl">Docente o persona que reporta</label><input class="al-inp" id="rep-quien" placeholder="Nombre del docente / orientador"></div>
+                        <div style="grid-column:1/-1;"><label class="al-lbl">Descripción de los hechos*</label><textarea class="al-inp" id="rep-descripcion" rows="3" placeholder="Describe lo ocurrido con detalle..." style="resize:vertical;"></textarea></div>
+                        <div><label class="al-lbl">Medida correctiva aplicada</label><input class="al-inp" id="rep-medida" placeholder="Ej. Llamado de atención, suspensión..."></div>
+                        <div><label class="al-lbl">Fecha del incidente</label><input class="al-inp" id="rep-fecha-inc" type="date"></div>
+                    </div>
+                    <div style="margin-top:14px;display:flex;gap:10px;">
+                        <button class="btn btn-red" onclick="guardarReporteConducfa()">💾 Guardar reporte</button>
+                        <button class="btn" style="background:#e2e8f0;color:var(--p-navy);border:none;" onclick="toggleFormReporte()">Cancelar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    
+</div>
+
+<div id="alumno-layout" style="display:none;"><nav id="alumno-sidebar">
+        <!-- Usuario -->
+        <div class="side-user">
+            <div class="side-user-avatar">👤</div>
+            <div class="side-user-info">
+                <h4 id="side-nombre">Alumno</h4>
+                <p id="side-semestre">— Semestre</p>
+            </div>
+        </div>
+
+        <!-- Inicio -->
+        <div class="side-section-title">Inicio</div>
+        <div class="side-item side-active" onclick="sideGo(this,'inicio')">
+            <span class="side-ico">🏠</span><span>Inicio</span>
+        </div>
+
+        <!-- Mi perfil -->
+        <div class="side-section-title">Mi perfil</div>
+        <div class="side-item" onclick="sideGo(this,'datos-gen')">
+            <span class="side-ico">👤</span><span>Datos generales</span>
+        </div>
+        <div class="side-item" onclick="sideGo(this,'domicilio')">
+            <span class="side-ico">🏠</span><span>Domicilio</span>
+        </div>
+        <div class="side-item" onclick="sideGo(this,'procedencia')">
+            <span class="side-ico">🏫</span><span>Procedencia</span>
+        </div>
+
+        <!-- Académico -->
+        <div class="side-section-title">Académico</div>
+        <div class="side-item" onclick="sideGo(this,'calificaciones')">
+            <span class="side-ico">📊</span><span>Calificaciones</span>
+        </div>
+        <div class="side-item" onclick="sideGo(this,'boleta')">
+            <span class="side-ico">📋</span><span>Boleta</span>
+        </div>
+        <div class="side-item" onclick="sideGo(this,'reportes-al')">
+            <span class="side-ico">📝</span><span>Reportes</span>
+        </div>
+
+        <div class="side-divider"></div>
+        <div class="side-item" onclick="cerrarSesion()" style="margin-top:auto;">
+            <span class="side-ico">🚪</span><span>Cerrar sesión</span>
+        </div>
+    </nav>
+
+    <!-- ── CONTENIDO ── -->
+<div id="alumno-content">
+
+        <!-- ══ INICIO: Solo indicador de riesgo ══ -->
+        <div id="al-inicio" class="al-panel al-active">
+            <!-- Saludo -->
+            <div style="background:white;border-radius:12px;padding:20px 26px;box-shadow:var(--shadow);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;">
+                <div>
+                    <h2 style="font-family:'Outfit';color:var(--p-navy);margin:0;font-size:1.25rem;">Bienvenido, <span id="alumno-nombre">—</span></h2>
+                    <p style="color:var(--p-gray);font-size:.86rem;margin:4px 0 0;">Semestre: <strong id="alumno-semestre"></strong> &nbsp;·&nbsp; Promedio: <strong id="alumno-promedio" style="color:var(--p-navy);font-size:1.05rem;"></strong></p>
+                </div>
+                <div style="text-align:right;font-size:.8rem;color:var(--p-gray);">
+                    EPO 381 Tenancingo<br><span id="side-fecha"></span>
+                </div>
+            </div>
+
+            <!-- INDICADOR DE RIESGO -->
+            <div style="background:white;border-radius:12px;box-shadow:var(--shadow);padding:26px 30px;">
+                <h3 style="font-family:'Outfit';color:var(--p-navy);font-size:.88rem;margin-bottom:14px;text-align:center;letter-spacing:.09em;text-transform:uppercase;font-weight:800;">INDICADORES DE RIESGO ACADÉMICO</h3>
+
+                <div style="display:flex;flex-direction:column;align-items:center;">
+                    <!-- Info box arriba derecha -->
+                    <div style="width:100%;display:flex;justify-content:flex-end;margin-bottom:4px;">
+                        <div style="border:1.5px solid #374151;border-radius:4px;padding:10px 15px;font-size:.82rem;color:#1e293b;line-height:1.9;background:#fff;min-width:230px;">
+                            <div>Grado de avance: <strong id="ri-avance">—</strong></div>
+                            <div>Promedio general: <strong id="ri-promedio">—</strong></div>
+                            <div>Promedio último periodo: <strong id="ri-ultimo">—</strong></div>
+                            <div>Situación actual: <strong id="ri-situacion">—</strong></div>
+                            <div>Actualización: <strong id="ri-fecha">—</strong></div>
+                        </div>
+                    </div>
+                    <!-- Banderas -->
+                    <div style="position:relative;width:100%;padding-bottom:6px;">
+                        <div style="position:absolute;bottom:0;left:0;right:0;height:3px;background:var(--p-navy);"></div>
+                        <div style="display:flex;align-items:flex-end;justify-content:center;gap:0;">
+                            <div class="risk-item" data-level="0" style="display:flex;flex-direction:column;align-items:center;padding:6px 18px 8px;transition:all .25s;border-radius:8px;">
+                                <div style="position:relative;width:52px;height:80px;"><div style="position:absolute;left:7px;top:0;width:3px;height:100%;background:#9ca3af;border-radius:1px;"></div><div class="risk-flag-shape" style="position:absolute;left:9px;top:10px;width:43px;height:26px;background:#d1d5db;clip-path:polygon(0 0,80% 0,100% 25%,80% 50%,100% 75%,80% 100%,0 100%);transition:all .3s;"></div></div>
+                                <span style="font-size:.75rem;font-weight:700;color:#9ca3af;margin-top:5px;text-align:center;">Baja</span>
+                            </div>
+                            <div class="risk-item" data-level="1" style="display:flex;flex-direction:column;align-items:center;padding:6px 18px 8px;transition:all .25s;border-radius:8px;">
+                                <div style="position:relative;width:52px;height:80px;"><div style="position:absolute;left:7px;top:0;width:3px;height:100%;background:#9ca3af;border-radius:1px;"></div><div class="risk-flag-shape" style="position:absolute;left:9px;top:10px;width:43px;height:26px;background:#fecaca;clip-path:polygon(0 0,80% 0,100% 25%,80% 50%,100% 75%,80% 100%,0 100%);transition:all .3s;"></div></div>
+                                <span style="font-size:.75rem;font-weight:700;color:#9ca3af;margin-top:5px;text-align:center;">Riesgo<br>alto</span>
+                            </div>
+                            <div class="risk-item" data-level="2" style="display:flex;flex-direction:column;align-items:center;padding:6px 18px 8px;transition:all .25s;border-radius:8px;">
+                                <div style="position:relative;width:52px;height:80px;"><div style="position:absolute;left:7px;top:0;width:3px;height:100%;background:#9ca3af;border-radius:1px;"></div><div class="risk-flag-shape" style="position:absolute;left:9px;top:10px;width:43px;height:26px;background:#fde68a;clip-path:polygon(0 0,80% 0,100% 25%,80% 50%,100% 75%,80% 100%,0 100%);transition:all .3s;"></div></div>
+                                <span style="font-size:.75rem;font-weight:700;color:#9ca3af;margin-top:5px;text-align:center;">Riesgo<br>medio</span>
+                            </div>
+                            <div class="risk-item" data-level="3" style="display:flex;flex-direction:column;align-items:center;padding:6px 18px 8px;transition:all .25s;border-radius:8px;">
+                                <div style="position:relative;width:52px;height:80px;"><div style="position:absolute;left:7px;top:0;width:3px;height:100%;background:#9ca3af;border-radius:1px;"></div><div class="risk-flag-shape" style="position:absolute;left:9px;top:10px;width:43px;height:26px;background:#bbf7d0;clip-path:polygon(0 0,80% 0,100% 25%,80% 50%,100% 75%,80% 100%,0 100%);transition:all .3s;"></div></div>
+                                <span style="font-size:.75rem;font-weight:700;color:#9ca3af;margin-top:5px;text-align:center;">Riesgo<br>bajo</span>
+                            </div>
+                            <div class="risk-item" data-level="4" style="display:flex;flex-direction:column;align-items:center;padding:6px 18px 8px;transition:all .25s;border-radius:8px;">
+                                <div style="position:relative;width:52px;height:80px;"><div style="position:absolute;left:7px;top:0;width:3px;height:100%;background:#9ca3af;border-radius:1px;"></div><div class="risk-flag-shape" style="position:absolute;left:9px;top:10px;width:43px;height:26px;background:#4ade80;clip-path:polygon(0 0,80% 0,100% 25%,80% 50%,100% 75%,80% 100%,0 100%);transition:all .3s;"></div></div>
+                                <span style="font-size:.75rem;font-weight:700;color:#9ca3af;margin-top:5px;text-align:center;">Sin<br>riesgo</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ══ DATOS GENERALES ══ -->
+        <div id="al-datos-gen" class="al-panel">
+            <div style="background:white;border-radius:12px;overflow:hidden;box-shadow:var(--shadow);">
+                <div class="al-panel-header"><span>👤</span><h3>Datos generales</h3>
+                    <button id="btn-editar-dg" onclick="toggleEditDG()" style="margin-left:auto;padding:6px 16px;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.4);color:white;border-radius:7px;cursor:pointer;font-size:.78rem;font-weight:700;">✏️ Editar</button>
+                </div>
+                <!-- Vista tabla -->
+                <div id="dg-view">
+                    <table class="al-table">
+                        <thead><tr><th style="text-align:right;">Campo</th><th style="text-align:left;">Valor</th></tr></thead>
+                        <tbody id="dg-tbody"></tbody>
+                    </table>
+                    <div style="padding:10px 18px;font-size:.73rem;color:var(--p-gray);border-top:1px solid #f1f5f9;">(*) Datos obligatorios &nbsp;·&nbsp; (**) Para cambiar correo: Herramientas → Correo personal registrado</div>
+                </div>
+                <!-- Formulario edición -->
+                <div id="dg-edit" style="display:none;padding:22px 24px;">
+                    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px 20px;">
+                        <div><label class="al-lbl">Primer apellido*</label><input class="al-inp" id="dg-ap1"></div>
+                        <div><label class="al-lbl">Segundo apellido</label><input class="al-inp" id="dg-ap2"></div>
+                        <div><label class="al-lbl">Nombre(s)*</label><input class="al-inp" id="dg-nombre-c"></div>
+                        <div><label class="al-lbl">Género*</label>
+                            <select class="al-inp" id="dg-genero" style="cursor:pointer;"><option>MASCULINO</option><option>FEMENINO</option><option>NO ESPECIFICADO</option></select>
+                        </div>
+                        <div><label class="al-lbl">Fecha de nacimiento</label><input class="al-inp" id="dg-fecha-nac" type="date"></div>
+                        <div><label class="al-lbl">CURP*</label><input class="al-inp" id="dg-curp" maxlength="18" style="text-transform:uppercase;"></div>
+                        <div><label class="al-lbl">Correo personal**</label><input class="al-inp" id="dg-email" type="email"></div>
+                        <div><label class="al-lbl">Municipio de nacimiento</label><input class="al-inp" id="dg-municipio-nac"></div>
+                        <div><label class="al-lbl">Tipo de sangre</label>
+                            <select class="al-inp" id="dg-sangre" style="cursor:pointer;"><option value="">—</option><option>A+</option><option>A-</option><option>B+</option><option>B-</option><option>AB+</option><option>AB-</option><option>O+</option><option>O-</option></select>
+                        </div>
+                        <div><label class="al-lbl">Nombre del tutor*</label><input class="al-inp" id="dg-tutor"></div>
+                        <div style="grid-column:1/-1;">
+                            <label class="al-lbl" style="margin-bottom:8px;display:block;">Indicadores sociales</label>
+                            <div style="display:flex;gap:16px;flex-wrap:wrap;">
+                                <label style="display:flex;align-items:center;gap:6px;font-size:.83rem;cursor:pointer;"><input type="checkbox" id="dg-indigena" style="accent-color:var(--p-red);"> En grupo indígena</label>
+                                <label style="display:flex;align-items:center;gap:6px;font-size:.83rem;cursor:pointer;"><input type="checkbox" id="dg-dialecto" style="accent-color:var(--p-red);"> Habla dialecto</label>
+                                <label style="display:flex;align-items:center;gap:6px;font-size:.83rem;cursor:pointer;"><input type="checkbox" id="dg-madre-soltera" style="accent-color:var(--p-red);"> Madre soltera</label>
+                                <label style="display:flex;align-items:center;gap:6px;font-size:.83rem;cursor:pointer;"><input type="checkbox" id="dg-discapacidad" style="accent-color:var(--p-red);"> Con discapacidad</label>
+                                <label style="display:flex;align-items:center;gap:6px;font-size:.83rem;cursor:pointer;"><input type="checkbox" id="dg-debil-visual" style="accent-color:var(--p-red);"> Débil visual</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="margin-top:16px;display:flex;gap:10px;">
+                        <button class="btn btn-red" onclick="guardarDG()">💾 Guardar</button>
+                        <button class="btn" style="background:#e2e8f0;color:var(--p-navy);border:none;" onclick="toggleEditDG()">Cancelar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ══ DOMICILIO ══ -->
+        <div id="al-domicilio" class="al-panel">
+            <div style="background:white;border-radius:12px;overflow:hidden;box-shadow:var(--shadow);">
+                <div class="al-panel-header"><span>🏠</span><h3>Domicilio</h3>
+                    <button onclick="toggleEditDom()" style="margin-left:auto;padding:6px 16px;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.4);color:white;border-radius:7px;cursor:pointer;font-size:.78rem;font-weight:700;">✏️ Editar</button>
+                </div>
+                <div id="dom-view">
+                    <table class="al-table"><thead><tr><th style="text-align:right;">Campo</th><th style="text-align:left;">Valor</th></tr></thead><tbody id="dom-tbody"></tbody></table>
+                    <p style="padding:10px 18px;font-size:.73rem;color:var(--p-gray);border-top:1px solid #f1f5f9;">(*) Datos obligatorios</p>
+                </div>
+                <div id="dom-edit" style="display:none;padding:22px 24px;">
+                    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px 20px;">
+                        <div style="grid-column:1/-1;"><label class="al-lbl">Calle*</label><input class="al-inp" id="dom-calle" placeholder="Nombre de la calle"></div>
+                        <div><label class="al-lbl">Colonia</label><input class="al-inp" id="dom-colonia" placeholder="Colonia"></div>
+                        <div><label class="al-lbl">Población</label><input class="al-inp" id="dom-poblacion" placeholder="Población"></div>
+                        <div><label class="al-lbl">Código postal</label><input class="al-inp" id="dom-cp" placeholder="Ej. 52400" maxlength="6"></div>
+                        <div><label class="al-lbl">Teléfono</label><input class="al-inp" id="dom-tel" placeholder="10 dígitos" maxlength="10"></div>
+                        <div><label class="al-lbl">País*</label><input class="al-inp" id="dom-pais" value="MÉXICO"></div>
+                        <div><label class="al-lbl">Estado*</label><input class="al-inp" id="dom-estado" value="MÉXICO"></div>
+                        <div><label class="al-lbl">Municipio*</label><input class="al-inp" id="dom-municipio" placeholder="Ej. Tenancingo"></div>
+                    </div>
+                    <div style="margin-top:16px;display:flex;gap:10px;">
+                        <button class="btn btn-red" onclick="guardarDomicilio()">💾 Guardar</button>
+                        <button class="btn" style="background:#e2e8f0;color:var(--p-navy);border:none;" onclick="toggleEditDom()">Cancelar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ══ PROCEDENCIA ══ -->
+        <div id="al-procedencia" class="al-panel">
+            <div style="background:white;border-radius:12px;overflow:hidden;box-shadow:var(--shadow);">
+                <div class="al-panel-header"><span>🏫</span><h3>Procedencia — Egresados de Secundaria / Telesecundaria</h3>
+                    <button onclick="toggleEditProc()" style="margin-left:auto;padding:6px 16px;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.4);color:white;border-radius:7px;cursor:pointer;font-size:.78rem;font-weight:700;">✏️ Editar</button>
+                </div>
+                <div id="proc-view">
+                    <div id="proc-view-empty" style="padding:30px;text-align:center;color:var(--p-gray);">No hay datos de procedencia registrados. Haz clic en <strong>Editar</strong> para agregarlos.</div>
+                    <table class="al-table" id="proc-view-table" style="display:none;"><thead><tr><th style="text-align:right;">Campo</th><th style="text-align:left;">Valor</th></tr></thead><tbody id="proc-tbody"></tbody></table>
+                </div>
+                <div id="proc-edit" style="display:none;padding:22px 24px;">
+                    <div style="margin-bottom:16px;">
+                        <label class="al-lbl" style="margin-bottom:8px;display:block;">Tipo de escuela*</label>
+                        <div style="display:flex;gap:10px;flex-wrap:wrap;">
+                            <label id="lbl-sec"  onclick="selecTipo('secundaria')"    style="display:flex;align-items:center;gap:7px;cursor:pointer;padding:9px 16px;border:2px solid #e2e8f0;border-radius:8px;font-weight:600;font-size:.83rem;color:var(--p-navy);transition:.2s;background:white;"><input type="radio" name="tipo-escuela" value="secundaria"    id="rb-sec"  style="accent-color:var(--p-red);">🏛️ Secundaria General</label>
+                            <label id="lbl-tele" onclick="selecTipo('telesecundaria')" style="display:flex;align-items:center;gap:7px;cursor:pointer;padding:9px 16px;border:2px solid #e2e8f0;border-radius:8px;font-weight:600;font-size:.83rem;color:var(--p-navy);transition:.2s;background:white;"><input type="radio" name="tipo-escuela" value="telesecundaria" id="rb-tele" style="accent-color:var(--p-red);">📡 Telesecundaria</label>
+                            <label id="lbl-tec"  onclick="selecTipo('tecnica')"        style="display:flex;align-items:center;gap:7px;cursor:pointer;padding:9px 16px;border:2px solid #e2e8f0;border-radius:8px;font-weight:600;font-size:.83rem;color:var(--p-navy);transition:.2s;background:white;"><input type="radio" name="tipo-escuela" value="tecnica"       id="rb-tec"  style="accent-color:var(--p-red);">🔧 Secundaria Técnica</label>
+                        </div>
+                    </div>
+                    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px 20px;">
+                        <div style="grid-column:1/-1;"><label class="al-lbl">Nombre de la escuela*</label><input class="al-inp" id="proc-nombre-esc" placeholder="Nombre completo de la escuela"></div>
+                        <div><label class="al-lbl">Clave CCT</label><input class="al-inp" id="proc-cct" placeholder="Ej. 15EES0001A" maxlength="12"></div>
+                        <div><label class="al-lbl">Municipio*</label><input class="al-inp" id="proc-municipio" placeholder="Ej. Tenancingo"></div>
+                        <div><label class="al-lbl">Estado</label><input class="al-inp" id="proc-estado" value="Estado de México"></div>
+                        <div><label class="al-lbl">Promedio de egreso</label><input class="al-inp" id="proc-promedio-egreso" type="number" min="6" max="10" step="0.1"></div>
+                        <div><label class="al-lbl">Año de egreso</label><input class="al-inp" id="proc-anio-egreso" type="number" min="2010" max="2030"></div>
+                        <div style="grid-column:1/-1;"><label class="al-lbl">Nombre del director(a)</label><input class="al-inp" id="proc-director" placeholder="Nombre del director(a)"></div>
+                    </div>
+                    <div style="margin-top:16px;display:flex;gap:10px;">
+                        <button class="btn btn-red" onclick="guardarProcedencia()">💾 Guardar</button>
+                        <button class="btn" style="background:#e2e8f0;color:var(--p-navy);border:none;" onclick="toggleEditProc()">Cancelar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ══ CALIFICACIONES ══ -->
+        <div id="al-calificaciones" class="al-panel">
+            <div style="background:white;border-radius:12px;overflow:hidden;box-shadow:var(--shadow);">
+                <div class="al-panel-header"><span>📊</span><h3>Consulta de Calificaciones</h3></div>
+                <div style="padding:16px 20px;border-bottom:1px solid #f1f5f9;display:flex;gap:10px;flex-wrap:wrap;align-items:center;">
+                    <label style="font-weight:700;font-size:.83rem;color:var(--p-navy);">Filtrar:</label>
+                    <select id="cal-filtro-semestre" class="al-inp" style="width:auto;padding:8px 12px;cursor:pointer;">
+                        <option value="all">Todos los semestres</option>
+                        <option value="1">1° Semestre</option><option value="2">2° Semestre</option>
+                        <option value="3">3° Semestre</option><option value="4">4° Semestre</option>
+                        <option value="5">5° Semestre</option><option value="6">6° Semestre</option>
+                    </select>
+                    <select id="cal-filtro-parcial" class="al-inp" style="width:auto;padding:8px 12px;cursor:pointer;">
+                        <option value="all">Todos los parciales</option>
+                        <option value="p1">Parcial 1</option><option value="p2">Parcial 2</option><option value="p3">Parcial 3</option>
+                    </select>
+                    <button onclick="filtrarCalificaciones()" class="btn btn-blue" style="padding:8px 20px;font-size:.83rem;">🔍 Aplicar</button>
+                </div>
+                <table class="cal-table">
+                    <thead><tr id="cal-thead-row">
+                        <th>Materia</th><th>Parcial 1</th><th>Parcial 2</th><th>Parcial 3</th><th>Promedio Final</th>
+                    </tr></thead>
+                    <tbody id="tabla-calificaciones"></tbody>
+                </table>
+                <div id="cal-resumen-parcial" style="display:none;padding:16px 20px;border-top:1px solid #f1f5f9;background:#f8fafc;">
+                    <h4 style="font-family:'Outfit';color:var(--p-navy);margin-bottom:12px;font-size:.95rem;" id="cal-resumen-titulo">Resumen</h4>
+                    <div style="display:flex;gap:28px;flex-wrap:wrap;">
+                        <div style="text-align:center;"><div style="font-size:1.8rem;font-weight:900;color:var(--p-navy);" id="cal-res-prom">—</div><div style="font-size:.73rem;color:var(--p-gray);font-weight:700;text-transform:uppercase;">Promedio</div></div>
+                        <div style="text-align:center;"><div style="font-size:1.8rem;font-weight:900;color:#16a34a;" id="cal-res-aprov">—</div><div style="font-size:.73rem;color:var(--p-gray);font-weight:700;text-transform:uppercase;">Aprobadas</div></div>
+                        <div style="text-align:center;"><div style="font-size:1.8rem;font-weight:900;color:#dc2626;" id="cal-res-rep">—</div><div style="font-size:.73rem;color:var(--p-gray);font-weight:700;text-transform:uppercase;">Reprobadas</div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ══ BOLETA ══ -->
+        <div id="al-boleta" class="al-panel">
+            <div style="background:white;border-radius:12px;overflow:hidden;box-shadow:var(--shadow);">
+                <div class="al-panel-header"><span>📋</span><h3>Boleta de Calificaciones</h3>
+                    <div style="margin-left:auto;display:flex;gap:8px;">
+                        <button onclick="imprimirBoleta()" style="padding:6px 14px;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.4);color:white;border-radius:7px;cursor:pointer;font-size:.78rem;font-weight:700;">🖨️ Imprimir</button>
+                        <button onclick="exportarBoleta()" style="padding:6px 14px;background:var(--p-red);border:none;color:white;border-radius:7px;cursor:pointer;font-size:.78rem;font-weight:700;">📤 Exportar</button>
+                    </div>
+                </div>
+                <div style="padding:28px;" id="boleta-content">
+                    <!-- Encabezado boleta -->
+                    <div style="display:flex;align-items:center;gap:16px;border-bottom:3px solid var(--p-navy);padding-bottom:14px;margin-bottom:16px;">
+                        <img src="img/Logo.png" style="height:56px;border-radius:50%;" onerror="this.style.display='none'">
+                        <div style="flex:1;">
+                            <div style="font-family:'Outfit';font-size:1.05rem;font-weight:800;color:var(--p-navy);">Escuela Preparatoria Oficial Núm. 381</div>
+                            <div style="font-size:.75rem;color:var(--p-gray);">C.C.T. 15EBP0025F &nbsp;·&nbsp; Tenancingo, Estado de México &nbsp;·&nbsp; Ciclo 2025-2026</div>
+                        </div>
+                        <div style="text-align:right;font-size:.76rem;color:var(--p-gray);">
+                            <div style="font-weight:800;color:var(--p-navy);font-size:.88rem;text-transform:uppercase;letter-spacing:.06em;">Boleta de Calificaciones</div>
+                            <div id="bol-fecha-gen"></div>
+                        </div>
+                    </div>
+                    <!-- Datos alumno en boleta -->
+                    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:7px 20px;margin-bottom:16px;font-size:.82rem;background:#f8fafc;padding:12px 16px;border-radius:8px;">
+                        <div><span style="color:var(--p-gray);font-weight:600;">Alumno: </span><span id="bol-nombre" style="font-weight:700;color:var(--p-navy);"></span></div>
+                        <div><span style="color:var(--p-gray);font-weight:600;">Matrícula: </span><span id="bol-id" style="font-weight:700;color:var(--p-navy);"></span></div>
+                        <div><span style="color:var(--p-gray);font-weight:600;">Semestre/Grupo: </span><span id="bol-sem" style="font-weight:700;color:var(--p-navy);"></span></div>
+                        <div><span style="color:var(--p-gray);font-weight:600;">Turno: </span><span style="font-weight:700;color:var(--p-navy);">Matutino</span></div>
+                        <div><span style="color:var(--p-gray);font-weight:600;">Situación: </span><span id="bol-sit" style="font-weight:700;color:var(--p-navy);"></span></div>
+                        <div><span style="color:var(--p-gray);font-weight:600;">Promedio: </span><span id="bol-prom" style="font-weight:900;color:var(--p-navy);font-size:1.05rem;"></span></div>
+                    </div>
+                    <!-- Tabla calificaciones boleta -->
+                    <table style="width:100%;border-collapse:collapse;font-size:.81rem;">
+                        <thead><tr style="background:var(--p-navy);color:white;">
+                            <th style="padding:9px 14px;text-align:left;font-size:.73rem;text-transform:uppercase;letter-spacing:.05em;">Asignatura</th>
+                            <th style="padding:9px 14px;text-align:center;font-size:.73rem;text-transform:uppercase;letter-spacing:.05em;">P1</th>
+                            <th style="padding:9px 14px;text-align:center;font-size:.73rem;text-transform:uppercase;letter-spacing:.05em;">P2</th>
+                            <th style="padding:9px 14px;text-align:center;font-size:.73rem;text-transform:uppercase;letter-spacing:.05em;">P3</th>
+                            <th style="padding:9px 14px;text-align:center;font-size:.73rem;text-transform:uppercase;letter-spacing:.05em;">Final</th>
+                            <th style="padding:9px 14px;text-align:center;font-size:.73rem;text-transform:uppercase;letter-spacing:.05em;">Estatus</th>
+                        </tr></thead>
+                        <tbody id="bol-tbody"></tbody>
+                        <tfoot><tr style="background:#1e293b;color:white;">
+                            <td colspan="4" style="padding:9px 14px;text-align:right;font-weight:700;">PROMEDIO GENERAL</td>
+                            <td id="bol-prom-final" style="padding:9px 14px;text-align:center;font-weight:900;font-size:1.05rem;"></td>
+                            <td></td>
+                        </tr></tfoot>
+                    </table>
+                    <!-- Firmas -->
+                    <div style="display:flex;justify-content:space-around;margin-top:36px;flex-wrap:wrap;gap:20px;">
+                        <div style="text-align:center;font-size:.74rem;color:var(--p-gray);"><div style="width:155px;border-top:1px solid #1e293b;margin:0 auto 5px;"></div>Director General</div>
+                        <div style="text-align:center;font-size:.74rem;color:var(--p-gray);"><div style="width:155px;border-top:1px solid #1e293b;margin:0 auto 5px;"></div>Control Escolar</div>
+                        <div style="text-align:center;font-size:.74rem;color:var(--p-gray);"><div style="width:155px;border-top:1px solid #1e293b;margin:0 auto 5px;"></div>Orientadora Educativa</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ══ REPORTES — Solo mala conducta ══ -->
+        <div id="al-reportes-al" class="al-panel">
+            <div style="background:white;border-radius:12px;overflow:hidden;box-shadow:var(--shadow);">
+                <div class="al-panel-header"><span>📝</span><h3>Reportes de Conducta</h3>
+                    <button onclick="toggleFormReporte()" style="margin-left:auto;padding:6px 14px;background:var(--p-red);border:none;color:white;border-radius:7px;cursor:pointer;font-size:.78rem;font-weight:700;">+ Nuevo reporte</button>
+                </div>
+                <!-- Stats -->
+                <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-bottom:1px solid #f1f5f9;">
+                    <div style="padding:16px;text-align:center;border-right:1px solid #f1f5f9;">
+                        <div style="font-size:1.8rem;font-weight:900;color:var(--p-navy);" id="rp-total">0</div>
+                        <div style="font-size:.72rem;color:var(--p-gray);font-weight:700;text-transform:uppercase;letter-spacing:.04em;">Total</div>
+                    </div>
+                    <div style="padding:16px;text-align:center;border-right:1px solid #f1f5f9;">
+                        <div style="font-size:1.8rem;font-weight:900;color:#f59e0b;" id="rp-pendientes">0</div>
+                        <div style="font-size:.72rem;color:var(--p-gray);font-weight:700;text-transform:uppercase;letter-spacing:.04em;">Pendientes</div>
+                    </div>
+                    <div style="padding:16px;text-align:center;">
+                        <div style="font-size:1.8rem;font-weight:900;color:#16a34a;" id="rp-resueltos">0</div>
+                        <div style="font-size:.72rem;color:var(--p-gray);font-weight:700;text-transform:uppercase;letter-spacing:.04em;">Atendidos</div>
+                    </div>
+                </div>
+                <!-- Tabla reportes -->
+                <div style="overflow-x:auto;">
+                    <table style="width:100%;border-collapse:collapse;font-size:.84rem;">
+                        <thead><tr style="background:var(--p-navy);">
+                            <th style="padding:11px 16px;text-align:left;color:white;font-size:.74rem;text-transform:uppercase;letter-spacing:.05em;">Fecha</th>
+                            <th style="padding:11px 16px;text-align:left;color:white;font-size:.74rem;text-transform:uppercase;letter-spacing:.05em;">Tipo de falta</th>
+                            <th style="padding:11px 16px;text-align:left;color:white;font-size:.74rem;text-transform:uppercase;letter-spacing:.05em;">Descripción</th>
+                            <th style="padding:11px 16px;text-align:left;color:white;font-size:.74rem;text-transform:uppercase;letter-spacing:.05em;">Reportó</th>
+                            <th style="padding:11px 16px;text-align:center;color:white;font-size:.74rem;text-transform:uppercase;letter-spacing:.05em;">Estado</th>
+                        </tr></thead>
+                        <tbody id="rp-tbody"></tbody>
+                    </table>
+                </div>
+                <!-- Formulario nuevo reporte de conducta -->
+                <div id="form-reporte-conducta" style="display:none;padding:22px 24px;border-top:3px solid var(--p-red);background:#fdf2f2;">
+                    <h4 style="font-family:'Outfit';color:var(--p-navy);margin-bottom:14px;">📋 Registro de reporte de conducta</h4>
+                    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px 20px;">
+                        <div><label class="al-lbl">Tipo de falta*</label>
+                            <select class="al-inp" id="rep-tipo-conducta" style="cursor:pointer;">
+                                <option value="">-- Selecciona --</option>
+                                <option>Falta de respeto a docente</option>
+                                <option>Falta de respeto a compañero</option>
+                                <option>Daño a instalaciones</option>
+                                <option>Uso inadecuado de dispositivos</option>
+                                <option>Acoso escolar (bullying)</option>
+                                <option>Agresión física</option>
+                                <option>Lenguaje inapropiado</option>
+                                <option>Desobediencia a autoridades</option>
+                                <option>Otra conducta inadecuada</option>
+                            </select>
+                        </div>
+                        <div><label class="al-lbl">Docente o persona que reporta</label><input class="al-inp" id="rep-quien" placeholder="Nombre del docente / orientador"></div>
+                        <div style="grid-column:1/-1;"><label class="al-lbl">Descripción de los hechos*</label><textarea class="al-inp" id="rep-descripcion" rows="3" placeholder="Describe lo ocurrido con detalle..." style="resize:vertical;"></textarea></div>
+                        <div><label class="al-lbl">Medida correctiva aplicada</label><input class="al-inp" id="rep-medida" placeholder="Ej. Llamado de atención, suspensión..."></div>
+                        <div><label class="al-lbl">Fecha del incidente</label><input class="al-inp" id="rep-fecha-inc" type="date"></div>
+                    </div>
+                    <div style="margin-top:14px;display:flex;gap:10px;">
+                        <button class="btn btn-red" onclick="guardarReporteConducfa()">💾 Guardar reporte</button>
+                        <button class="btn" style="background:#e2e8f0;color:var(--p-navy);border:none;" onclick="toggleFormReporte()">Cancelar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div><!-- /alumno-content -->
+</div><!-- /alumno-layout --></div><!-- /alu-content-wrap -->
+
+<!-- Ventana boleta para imprimir / exportar -->
+<div id="boleta-print-window" style="display:none;position:fixed;inset:0;background:white;z-index:9999;overflow-y:auto;padding:30px;">
+    <div style="max-width:760px;margin:0 auto;">
+        <div id="boleta-export-content"></div>
+        <div style="margin-top:20px;display:flex;gap:10px;justify-content:center;" id="boleta-export-btns">
+            <button onclick="window.print()" class="btn btn-blue">🖨️ Imprimir</button>
+            <button onclick="cerrarVentanaBoleta()" class="btn" style="background:#e2e8f0;color:var(--p-navy);border:none;">✕ Cerrar</button>
+        </div>
+    </div>
+</div>
+
+</main>
+
+<!-- ══════════ PORTAL STAFF (DOCENTE / ORIENTADOR) ══════════ -->
+<main id="page-staff" class="page">
+
+    <!-- Encabezado dinámico -->
+    <div class="portal-header" style="margin-bottom:30px;">
+        <div>
+            <h2 id="staff-title">Panel de Control</h2>
+            <p style="opacity:0.7; font-size:0.9rem; margin-top:4px;">Sistema de Control Escolar — EPO 381</p>
+        </div>
+        <button class="btn" style="padding:10px 20px; font-size:0.8rem; background:rgba(255,255,255,0.15); border:2px solid rgba(255,255,255,0.4); color:white; border-radius:10px; cursor:pointer;" onclick="cerrarSesion()">🚪 Cerrar Sesión</button>
+    </div>
+
+    <!-- Herramientas orientador (visibles solo para orientadores) -->
+    <div id="orientador-tools" class="grid-layout" style="display:none; margin-bottom:30px;">
+        <div class="card" style="padding:30px; border-left: 10px solid #22c55e; cursor:pointer;" onclick="showStaffTab('concentrado')">
+            <h4 style="font-family:'Outfit'; margin-bottom:5px;">📁 SUBIR CONCENTRADO</h4>
+            <p style="color:var(--p-gray); font-size:0.9rem;">Formato Excel (.xlsx)</p>
+        </div>
+        <div class="card" style="padding:30px; border-left: 10px solid var(--p-red); cursor:pointer;" onclick="showStaffTab('avisos-staff')">
+            <h4 style="font-family:'Outfit'; margin-bottom:5px;">📢 PUBLICAR AVISO</h4>
+            <p style="color:var(--p-gray); font-size:0.9rem;">Tablón institucional</p>
+        </div>
+        <div class="card" style="padding:30px; border-left: 10px solid var(--p-blue); cursor:pointer;" onclick="showStaffTab('reportes')">
+            <h4 style="font-family:'Outfit'; margin-bottom:5px;">📊 REPORTES ACADÉMICOS</h4>
+            <p style="color:var(--p-gray); font-size:0.9rem;">Análisis por grupo</p>
+        </div>
+    </div>
+
+    <!-- Tabs de staff -->
+    <div class="tabs">
+        <!-- Docente -->
+        <button class="staff-tab-btn active" onclick="showStaffTab('calificaciones-doc')">📊 Calificaciones</button>
+        <button class="staff-tab-btn"        onclick="showStaffTab('asistencias-doc')">📋 Asistencias</button>
+        <!-- Orientador (extra) -->
+        <button class="staff-tab-btn ori-only" onclick="showStaffTab('alumnos-ori')" style="display:none;">👥 Alumnos</button>
+        <button class="staff-tab-btn ori-only" onclick="showStaffTab('reportes')"     style="display:none;">📈 Reportes</button>
+        <button class="staff-tab-btn ori-only" onclick="showStaffTab('avisos-staff')" style="display:none;">📢 Avisos</button>
+    </div>
+
+    <!-- ── SECCIÓN DOCENTE ── -->
+    <div id="docente-section" style="display:none;">
+
+        <!-- Tab: Captura de calificaciones -->
+        <div id="stab-calificaciones-doc" class="staff-tab-content" style="display:block;">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:20px;">
+                <h3 style="font-family:'Outfit'; color:var(--p-navy);">Captura de Calificaciones</h3>
+                <button class="btn btn-green" onclick="guardarCalificaciones()">💾 Guardar Cambios</button>
+            </div>
+            <div class="tabla-wrapper">
+                <table>
+                    <thead>
+                        <tr><th>ID</th><th>Alumno</th><th>Semestre</th><th>Parcial 1</th><th>Parcial 2</th><th>Parcial 3</th></tr>
+                    </thead>
+                    <tbody id="docente-tabla"></tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Tab: Lista de asistencias -->
+        <div id="stab-asistencias-doc" class="staff-tab-content">
+            <h3 style="font-family:'Outfit'; color:var(--p-navy); margin-bottom:20px;">Registro de Asistencias</h3>
+            <div class="tabla-wrapper">
+                <table>
+                    <thead>
+                        <tr><th>ID</th><th>Alumno</th><th>Semestre</th><th>Asistencias</th><th>Faltas</th><th>Porcentaje</th></tr>
+                    </thead>
+                    <tbody id="docente-asistencia"></tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- ── SECCIÓN ORIENTADOR ── -->
+    <!-- ── SECCIÓN ORIENTADOR (diseño epoMariana) ── -->
+    <div id="orientador-section" style="display:none;">
+
+      <style>
+        /* ── Variables epoMariana dentro del portal ── */
+        #orientador-section {
+          --navy:      #1B2A4A;
+          --navy-deep: #111D33;
+          --blue:      #1D4ED8;
+          --blue-mid:  #2563EB;
+          --blue-light:#3B82F6;
+          --blue-pale: #EFF6FF;
+          --crimson:   #7F1D1D;
+          --crimson-btn:#8B1D1D;
+          --white:     #FFFFFF;
+          --off:       #F8FAFC;
+          --gray-100:  #F1F5F9;
+          --gray-200:  #E2E8F0;
+          --gray-400:  #94A3B8;
+          --gray-600:  #475569;
+          --gray-800:  #1E293B;
+          --teal:      #0D9488;
+          --shadow:    0 4px 24px rgba(27,42,74,.10);
+          --shadow-lg: 0 12px 40px rgba(27,42,74,.16);
+          --r:         10px;
+          font-family: 'DM Sans', 'Plus Jakarta Sans', sans-serif;
+        }
+        .ori-icon-menu { display:flex; flex-wrap:wrap; gap:24px; padding:10px 0 20px; justify-content:flex-start; }
+        .ori-icon-btn { display:flex; flex-direction:column; align-items:center; gap:10px; cursor:pointer; width:110px; transition:transform .2s; }
+        .ori-icon-btn:hover { transform:translateY(-4px); }
+        .ori-icon-circle { width:86px; height:86px; border-radius:50%; overflow:hidden; box-shadow:var(--shadow); border:2px solid var(--gray-200); display:flex; align-items:center; justify-content:center; font-size:2rem; }
+        .ori-icon-circle svg { width:100%; height:100%; }
+        .ori-icon-label { font-size:.78rem; font-weight:600; color:var(--gray-800); text-align:center; line-height:1.3; }
+        .ori-page { display:none; }
+        .ori-page.ori-active { display:block; }
+        .ori-box { border-left:4px solid var(--navy); border-right:4px solid var(--navy); padding:24px 30px; background:var(--white); border-radius:0 0 var(--r) var(--r); box-shadow:var(--shadow); }
+        .ori-page-title { font-family:'DM Serif Display','Outfit',serif; font-size:1.35rem; color:var(--navy); margin-bottom:18px; }
+        .ori-btn { display:inline-flex; align-items:center; gap:6px; padding:10px 22px; border:none; border-radius:8px; font-size:.85rem; font-weight:600; cursor:pointer; transition:all .2s; font-family:inherit; }
+        .ori-btn-crimson { background:#8B1D1D; color:white; }
+        .ori-btn-crimson:hover { background:#991B1B; transform:translateY(-1px); }
+        .ori-btn-blue { background:#2563EB; color:white; }
+        .ori-btn-blue:hover { background:#1D4ED8; transform:translateY(-1px); }
+        .ori-btn-teal { background:#0D9488; color:white; }
+        .ori-btn-sm { padding:6px 14px; font-size:.78rem; }
+        .ori-search-bar { background:var(--gray-100); border-radius:8px; padding:12px 16px; margin-bottom:14px; display:flex; gap:10px; align-items:center; flex-wrap:wrap; }
+        .ori-search-input { flex:1; min-width:200px; padding:9px 13px; border:1px solid var(--gray-200); border-radius:7px; font-family:inherit; font-size:.87rem; outline:none; background:white; transition:border-color .2s; }
+        .ori-search-input:focus { border-color:#2563EB; }
+        .ori-search-select { padding:9px 13px; border:1px solid var(--gray-200); border-radius:7px; font-family:inherit; font-size:.87rem; background:white; outline:none; min-width:150px; cursor:pointer; }
+        .ori-data-table { width:100%; border-collapse:collapse; background:white; border-radius:var(--r); overflow:hidden; box-shadow:var(--shadow); }
+        .ori-data-table thead th { background:var(--navy); color:white; padding:12px 15px; text-align:left; font-size:.78rem; font-weight:700; letter-spacing:.04em; text-transform:uppercase; }
+        .ori-data-table tbody td { padding:11px 15px; border-bottom:1px solid var(--gray-100); font-size:.86rem; color:var(--gray-800); }
+        .ori-data-table tbody tr:hover { background:var(--blue-pale); }
+        .ori-data-table tbody tr:last-child td { border-bottom:none; }
+        .ori-subir-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:16px; }
+        .ori-subir-card { background:var(--white); border-radius:var(--r); padding:18px; box-shadow:var(--shadow); border-top:3px solid #2563EB; }
+        .ori-subir-card .alu-name { font-weight:700; font-size:.88rem; color:var(--navy); margin-bottom:10px; }
+        .ori-subir-parcial { display:flex; align-items:center; gap:6px; margin-bottom:7px; }
+        .ori-subir-parcial label { font-size:.75rem; font-weight:600; color:var(--gray-600); width:56px; flex-shrink:0; }
+        .ori-subir-parcial input { flex:1; padding:6px 9px; border:1.5px solid var(--gray-200); border-radius:6px; font-size:.86rem; font-family:inherit; outline:none; transition:border-color .2s; }
+        .ori-subir-parcial input:focus { border-color:#2563EB; }
+        .ori-boleta-print { background:white; border:1px solid var(--gray-200); border-radius:var(--r); padding:26px; max-width:700px; box-shadow:var(--shadow); }
+        .ori-boleta-header { display:flex; align-items:center; gap:14px; border-bottom:2px solid var(--navy); padding-bottom:12px; margin-bottom:16px; }
+        .ori-boleta-logo { height:52px; border-radius:50%; flex-shrink:0; }
+        .ori-boleta-school h3 { font-family:'Outfit',serif; color:var(--navy); font-size:1rem; margin:0; }
+        .ori-boleta-school p { font-size:.76rem; color:var(--gray-600); margin:2px 0; }
+        .ori-boleta-alumno { display:grid; grid-template-columns:1fr 1fr; gap:6px 20px; margin-bottom:16px; font-size:.84rem; }
+        .ori-boleta-alumno span { font-weight:700; color:var(--navy); }
+        .ori-boleta-table { width:100%; border-collapse:collapse; font-size:.8rem; margin-bottom:12px; }
+        .ori-boleta-table thead th { background:var(--navy); color:white; padding:8px 11px; text-align:center; font-size:.73rem; font-weight:700; text-transform:uppercase; }
+        .ori-boleta-table tbody td { padding:7px 11px; border-bottom:1px solid var(--gray-100); text-align:center; }
+        .ori-boleta-table tfoot td { background:#111D33; color:white; padding:8px 11px; font-weight:700; text-align:center; }
+        .ori-firma { display:flex; justify-content:space-around; margin-top:24px; flex-wrap:wrap; gap:14px; }
+        .ori-firma-box { text-align:center; font-size:.76rem; color:var(--gray-600); }
+        .ori-firma-line { width:150px; border-top:1px solid var(--gray-800); margin:0 auto 5px; }
+        .ori-ind-layout { display:grid; grid-template-columns:1fr 1fr; gap:22px; align-items:start; }
+        .ori-ind-table { width:100%; border-collapse:collapse; font-size:.77rem; }
+        .ori-ind-table th { background:var(--navy); color:white; padding:7px 9px; text-align:center; font-size:.7rem; font-weight:700; letter-spacing:.04em; }
+        .ori-ind-table td { padding:6px 9px; border-bottom:1px solid var(--gray-100); color:var(--gray-800); }
+        .ori-ind-table tbody tr:nth-child(even) { background:var(--blue-pale); }
+        .ori-ind-table tfoot td { background:#111D33; color:white; font-weight:700; padding:7px 9px; }
+        .ori-chart-grid { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+        .ori-chart-box { background:white; border-radius:var(--r); padding:13px; box-shadow:var(--shadow); }
+        .ori-chart-title { font-size:.72rem; font-weight:700; text-align:center; color:var(--navy); margin-bottom:7px; text-transform:uppercase; letter-spacing:.05em; }
+        .ori-seg-header { background:white; border-radius:8px; padding:13px 16px; text-align:center; margin-bottom:10px; box-shadow:var(--shadow); }
+        .ori-seg-header h3 { font-family:'Outfit',serif; font-size:1.1rem; color:var(--navy); }
+        .ori-seg-header p { font-size:.8rem; color:var(--gray-600); font-weight:600; }
+        .ori-seg-table { width:100%; border-collapse:collapse; background:white; border-radius:var(--r); overflow:hidden; box-shadow:var(--shadow); font-size:.78rem; }
+        .ori-seg-table thead th { background:var(--navy); color:white; padding:9px 11px; text-align:center; font-size:.7rem; font-weight:700; text-transform:uppercase; letter-spacing:.04em; }
+        .ori-seg-table tbody td { padding:8px 11px; border-bottom:1px solid var(--gray-100); text-align:center; color:var(--gray-800); }
+        .ori-seg-table tbody tr:hover { background:var(--blue-pale); }
+        .ori-badge { display:inline-flex; align-items:center; padding:3px 10px; border-radius:100px; font-size:.7rem; font-weight:700; }
+        .ori-badge-green { background:#DCFCE7; color:#15803D; }
+        .ori-badge-red   { background:#FEE2E2; color:#B91C1C; }
+        @media(max-width:860px) { .ori-ind-layout { grid-template-columns:1fr; } .ori-chart-grid { grid-template-columns:1fr; } }
+      </style>
+
+      <!-- ══ BIENVENIDA ══ -->
+      <div id="ori-page-bienvenida" class="ori-page ori-active">
+        <div class="ori-box">
+          <p class="ori-page-title" id="ori-welcome-title">Bienvenido, Orientador</p>
+          <p style="color:#94A3B8;font-size:.87rem;margin-bottom:20px;">¿Qué deseas realizar?</p>
+          <div class="ori-icon-menu">
+            <div class="ori-icon-btn" onclick="oriGo('subir-calificaciones')">
+              <div class="ori-icon-circle"><svg viewBox="0 0 86 86"><rect width="86" height="86" fill="#C6E7FF"/><ellipse cx="24" cy="28" rx="15" ry="9" fill="white" opacity=".85"/><ellipse cx="55" cy="22" rx="11" ry="7" fill="white" opacity=".7"/><ellipse cx="43" cy="72" rx="43" ry="21" fill="#5FA833"/><ellipse cx="43" cy="65" rx="36" ry="17" fill="#7BC67E"/><text x="43" y="50" text-anchor="middle" font-size="22">📊</text></svg></div>
+              <span class="ori-icon-label">Subir Calificaciones</span>
+            </div>
+            <div class="ori-icon-btn" onclick="oriGo('ficha-estudiantes')">
+              <div class="ori-icon-circle"><svg viewBox="0 0 86 86"><rect width="86" height="86" fill="#EFF6FF"/><ellipse cx="24" cy="28" rx="15" ry="9" fill="white" opacity=".85"/><ellipse cx="55" cy="22" rx="11" ry="7" fill="white" opacity=".7"/><ellipse cx="43" cy="72" rx="43" ry="21" fill="#5FA833"/><ellipse cx="43" cy="65" rx="36" ry="17" fill="#7BC67E"/><text x="43" y="50" text-anchor="middle" font-size="22">👥</text></svg></div>
+              <span class="ori-icon-label">Ficha Estudiantes</span>
+            </div>
+            <div class="ori-icon-btn" onclick="oriGo('generar-boleta')">
+              <div class="ori-icon-circle"><svg viewBox="0 0 86 86"><rect width="86" height="86" fill="#FEF3C7"/><ellipse cx="24" cy="28" rx="15" ry="9" fill="white" opacity=".85"/><ellipse cx="55" cy="22" rx="11" ry="7" fill="white" opacity=".7"/><ellipse cx="43" cy="72" rx="43" ry="21" fill="#5FA833"/><ellipse cx="43" cy="65" rx="36" ry="17" fill="#7BC67E"/><text x="43" y="50" text-anchor="middle" font-size="22">📋</text></svg></div>
+              <span class="ori-icon-label">Generar Boleta</span>
+            </div>
+            <div class="ori-icon-btn" onclick="oriGo('reportes')">
+              <div class="ori-icon-circle"><svg viewBox="0 0 86 86"><rect width="86" height="86" fill="#F0FFF4"/><ellipse cx="24" cy="28" rx="15" ry="9" fill="white" opacity=".85"/><ellipse cx="55" cy="22" rx="11" ry="7" fill="white" opacity=".7"/><ellipse cx="43" cy="72" rx="43" ry="21" fill="#5FA833"/><ellipse cx="43" cy="65" rx="36" ry="17" fill="#7BC67E"/><text x="43" y="50" text-anchor="middle" font-size="22">📢</text></svg></div>
+              <span class="ori-icon-label">Reportes</span>
+            </div>
+            <div class="ori-icon-btn" onclick="oriGo('concentrado')">
+              <div class="ori-icon-circle"><svg viewBox="0 0 86 86"><rect width="86" height="86" fill="#F5F3FF"/><ellipse cx="24" cy="28" rx="15" ry="9" fill="white" opacity=".85"/><ellipse cx="55" cy="22" rx="11" ry="7" fill="white" opacity=".7"/><ellipse cx="43" cy="72" rx="43" ry="21" fill="#5FA833"/><ellipse cx="43" cy="65" rx="36" ry="17" fill="#7BC67E"/><text x="43" y="50" text-anchor="middle" font-size="22">📁</text></svg></div>
+              <span class="ori-icon-label">Concentrado de Calificaciones</span>
+            </div>
+            <div class="ori-icon-btn" onclick="oriGo('seguimiento')">
+              <div class="ori-icon-circle"><svg viewBox="0 0 86 86"><rect width="86" height="86" fill="#FEE2E2"/><ellipse cx="24" cy="28" rx="15" ry="9" fill="white" opacity=".85"/><ellipse cx="55" cy="22" rx="11" ry="7" fill="white" opacity=".7"/><ellipse cx="43" cy="72" rx="43" ry="21" fill="#5FA833"/><ellipse cx="43" cy="65" rx="36" ry="17" fill="#7BC67E"/><text x="43" y="50" text-anchor="middle" font-size="22">🔴</text></svg></div>
+              <span class="ori-icon-label">Seguimiento Reprobados</span>
+            </div>
+            <div class="ori-icon-btn" onclick="oriGo('indicadores')">
+              <div class="ori-icon-circle"><svg viewBox="0 0 86 86"><rect width="86" height="86" fill="#DCFCE7"/><ellipse cx="24" cy="28" rx="15" ry="9" fill="white" opacity=".85"/><ellipse cx="55" cy="22" rx="11" ry="7" fill="white" opacity=".7"/><ellipse cx="43" cy="72" rx="43" ry="21" fill="#5FA833"/><ellipse cx="43" cy="65" rx="36" ry="17" fill="#7BC67E"/><text x="43" y="50" text-anchor="middle" font-size="22">📈</text></svg></div>
+              <span class="ori-icon-label">Indicadores</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ══ SUBIR CALIFICACIONES ══ -->
+      <div id="ori-page-subir-calificaciones" class="ori-page">
+        <div class="ori-box">
+          <p class="ori-page-title">Subir Calificaciones</p>
+          <div class="ori-subir-grid" id="ori-subir-grid"></div>
+          <div style="margin-top:18px;display:flex;gap:10px;">
+            <button class="ori-btn ori-btn-blue" onclick="oriGuardarTodasCalif()">💾 Guardar Todas</button>
+          </div>
+        </div>
+        <button class="ori-btn ori-btn-crimson" style="margin-top:16px;" onclick="oriGo('bienvenida')">← Regresar</button>
+      </div>
+
+      <!-- ══ FICHA ESTUDIANTES ══ -->
+      <div id="ori-page-ficha-estudiantes" class="ori-page">
+        <div class="ori-box">
+          <p class="ori-page-title">Ficha Estudiantes</p>
+          <div class="ori-search-bar">
+            <input class="ori-search-input" id="ori-fe-search" placeholder="Nombre del alumno..." oninput="oriFiltrarFicha()">
+            <select class="ori-search-select" id="ori-fe-grado" onchange="oriFiltrarFicha()">
+              <option value="">Todos los Grados</option>
+              <option value="2">2° Semestre</option><option value="4">4° Semestre</option><option value="6">6° Semestre</option>
+            </select>
+          </div>
+          <div style="overflow-x:auto;">
+            <table class="ori-data-table">
+              <thead><tr><th>Matrícula</th><th>Alumno</th><th>Grado</th><th>Promedio</th><th>Acciones</th></tr></thead>
+              <tbody id="ori-fe-tbody"></tbody>
+            </table>
+          </div>
+        </div>
+        <button class="ori-btn ori-btn-crimson" style="margin-top:16px;" onclick="oriGo('bienvenida')">← Regresar</button>
+      </div>
+
+      <!-- ══ GENERAR BOLETA ══ -->
+      <div id="ori-page-generar-boleta" class="ori-page">
+        <div class="ori-box">
+          <p class="ori-page-title">Generar Boleta</p>
+          <div style="margin-bottom:16px;max-width:360px;">
+            <label style="font-weight:600;font-size:.86rem;color:#475569;display:block;margin-bottom:6px;">Seleccionar alumno:</label>
+            <select class="ori-search-select" id="ori-gb-alumno" style="width:100%;" onchange="oriRenderBoleta(this.value)">
+              <option value="">-- Selecciona --</option>
+            </select>
+          </div>
+          <div class="ori-boleta-print" id="ori-gb-boleta-content">
+            <p style="color:#94A3B8;text-align:center;padding:22px;">Selecciona un alumno para generar su boleta.</p>
+          </div>
+          <div style="margin-top:16px;display:flex;gap:10px;">
+            <button class="ori-btn ori-btn-blue" onclick="window.print()">🖨️ Imprimir Boleta</button>
+            <button class="ori-btn ori-btn-crimson" onclick="oriExportarBoleta()">📤 Exportar</button>
+          </div>
+        </div>
+        <button class="ori-btn ori-btn-crimson" style="margin-top:16px;" onclick="oriGo('bienvenida')">← Regresar</button>
+      </div>
+
+      <!-- ══ REPORTES ══ -->
+      <div id="ori-page-reportes" class="ori-page">
+        <div class="ori-box">
+          <p class="ori-page-title">Reportes</p>
+          <div id="ori-reportes-list"><p style="color:#94A3B8;">Cargando reportes...</p></div>
+        </div>
+        <button class="ori-btn ori-btn-crimson" style="margin-top:16px;" onclick="oriGo('bienvenida')">← Regresar</button>
+      </div>
+
+      <!-- ══ CONCENTRADO ══ -->
+      <div id="ori-page-concentrado" class="ori-page">
+        <div class="ori-box">
+          <p class="ori-page-title">Concentrado de Calificaciones</p>
+          <div style="margin-bottom:12px;">
+            <label style="font-size:.8rem;font-weight:600;color:#475569;">Grupo: </label>
+            <select class="ori-search-select" id="ori-conc-grupo" onchange="oriRenderConcentrado()" style="margin-left:6px;">
+              <option value="all">Todos</option>
+            </select>
+          </div>
+          <div class="ori-ind-layout">
+            <div style="overflow-x:auto;">
+              <table class="ori-ind-table">
+                <thead><tr><th>UAC</th><th>Promedio</th><th>Reprobados</th><th>% Aprobación</th><th>% Reprobación</th></tr></thead>
+                <tbody id="ori-conc-tbody"></tbody>
+                <tfoot><tr id="ori-conc-tfoot"></tr></tfoot>
+              </table>
+            </div>
+            <div class="ori-chart-grid">
+              <div class="ori-chart-box"><p class="ori-chart-title">Promedio</p><canvas id="ori-chart-conc-prom" height="160"></canvas></div>
+              <div class="ori-chart-box"><p class="ori-chart-title">% Reprobación</p><canvas id="ori-chart-conc-rep" height="160"></canvas></div>
+              <div class="ori-chart-box" style="grid-column:1/-1;"><p class="ori-chart-title">Reprobados</p><canvas id="ori-chart-conc-num" height="110"></canvas></div>
+              <div class="ori-chart-box" style="grid-column:1/-1;"><p class="ori-chart-title">% Aprovechamiento</p><canvas id="ori-chart-conc-aprov" height="110"></canvas></div>
+            </div>
+          </div>
+          <div style="margin-top:16px;">
+            <button class="ori-btn ori-btn-crimson" onclick="oriExportarCSV('concentrado')">📤 Exportar CSV</button>
+          </div>
+        </div>
+        <button class="ori-btn ori-btn-crimson" style="margin-top:16px;" onclick="oriGo('bienvenida')">← Regresar</button>
+      </div>
+
+      <!-- ══ SEGUIMIENTO REPROBADOS ══ -->
+      <div id="ori-page-seguimiento" class="ori-page">
+        <div class="ori-box">
+          <p class="ori-page-title">Seguimiento Reprobados</p>
+          <div class="ori-seg-header">
+            <h3>SEGUIMIENTO DE IRREGULARES</h3>
+            <p id="ori-seg-subtitle">TODOS LOS SEMESTRES</p>
+            <div style="margin-top:8px;">
+              <label style="font-size:.8rem;font-weight:600;color:#475569;">Grupo: </label>
+              <select class="ori-search-select" id="ori-seg-grupo" onchange="oriRenderSeguimiento()" style="margin-left:4px;">
+                <option value="all">Todos</option>
+              </select>
+            </div>
+          </div>
+          <div style="overflow-x:auto;">
+            <table class="ori-seg-table">
+              <thead>
+                <tr>
+                  <th rowspan="2">NP</th><th rowspan="2">NOMBRE</th><th rowspan="2">EXTRAORDINARIOS</th>
+                  <th rowspan="2">ASIGNATURA</th><th colspan="3">OPORTUNIDADES</th><th rowspan="2">FECHA REGULARIZACIÓN</th>
+                </tr>
+                <tr><th>1ª</th><th>2ª</th><th>3ª</th></tr>
+              </thead>
+              <tbody id="ori-seg-tbody"></tbody>
+            </table>
+          </div>
+          <div style="margin-top:12px;">
+            <button class="ori-btn ori-btn-crimson" onclick="oriExportarCSV('seguimiento')">📤 Exportar CSV</button>
+          </div>
+        </div>
+        <button class="ori-btn ori-btn-crimson" style="margin-top:16px;" onclick="oriGo('bienvenida')">← Regresar</button>
+      </div>
+
+      <!-- ══ INDICADORES ══ -->
+      <div id="ori-page-indicadores" class="ori-page">
+        <div class="ori-box">
+          <p class="ori-page-title">Indicadores</p>
+          <div style="margin-bottom:12px;">
+            <label style="font-size:.8rem;font-weight:600;color:#475569;">Grupo: </label>
+            <select class="ori-search-select" id="ori-ind-grupo" onchange="oriRenderIndicadores()" style="margin-left:6px;">
+              <option value="all">Todos</option>
+            </select>
+          </div>
+          <div class="ori-ind-layout">
+            <div style="overflow-x:auto;">
+              <table class="ori-ind-table">
+                <thead><tr><th>Asignatura</th><th>Promedio</th><th>Reprobados</th><th>% Reprobación</th><th>% Aprov.</th></tr></thead>
+                <tbody id="ori-ind-tbody"></tbody>
+                <tfoot><tr id="ori-ind-tfoot"></tr></tfoot>
+              </table>
+              <div style="margin-top:5px;font-size:.73rem;color:#94A3B8;" id="ori-ind-grupo-label"></div>
+            </div>
+            <div class="ori-chart-grid">
+              <div class="ori-chart-box"><p class="ori-chart-title">% Reprobación</p><canvas id="ori-chart-rep" height="160"></canvas></div>
+              <div class="ori-chart-box"><p class="ori-chart-title">Promedio</p><canvas id="ori-chart-prom" height="160"></canvas></div>
+              <div class="ori-chart-box" style="grid-column:1/-1;"><p class="ori-chart-title">Número de Reprobados</p><canvas id="ori-chart-num" height="110"></canvas></div>
+              <div class="ori-chart-box" style="grid-column:1/-1;"><p class="ori-chart-title">% Aprovechamiento</p><canvas id="ori-chart-aprov" height="110"></canvas></div>
+            </div>
+          </div>
+          <div style="margin-top:16px;">
+            <button class="ori-btn ori-btn-crimson" onclick="oriExportarCSV('indicadores')">📤 Exportar CSV</button>
+          </div>
+        </div>
+        <button class="ori-btn ori-btn-crimson" style="margin-top:16px;" onclick="oriGo('bienvenida')">← Regresar</button>
+      </div>
+
+    </div><!-- /orientador-section -->
+
+</main>
+
+<!-- ══════════ MISIÓN / VISIÓN ══════════ -->
+<main id="page-about" class="page">
+    <section class="mv-clean">
+        <div class="section-title">
+            <span class="line"></span>
+            <h2>Filosofía</h2>
+        </div>
+        <div class="mv-container">
+            <div class="mv-card left">
+                <div class="card-header">
+                    <div class="icon blue">🎯</div>
+                    <h3>MISIÓN</h3>
+                </div>
+                <p>Brindar una Educación Media Superior Integral, humanista e inclusiva, en concordancia con los principios de la Nueva Escuela Mexicana. Formando estudiantes con pensamiento crítico, compromiso social y habilidades para la vida, capaces de continuar con su trayectoria educativa y de contribuir de manera activa a las necesidades de su comunidad para el bienestar de su entorno, fomentando una cultura de paz y cuidado del medio ambiente.</p>
+            </div>
+            <div class="mv-center">
+                <img src="img/Logo.png" alt="Logo">
+                <div class="divider"></div>
+                <p>CULTURA, DISCIPLINA<br>Y EXCELENCIA</p>
+                <div class="divider"></div>
+            </div>
+            <div class="mv-card right">
+                <div class="card-header">
+                    <div class="icon red">🚀</div>
+                    <h3>VISIÓN</h3>
+                </div>
+                <p>Ser una institución de Educación Media Superior que sea referente en la región por su calidad académica y por su innovación pedagógica. Con perspectiva humanista y comprometida con la equidad y la inclusión, en el marco de los principios de la Nueva Escuela Mexicana y consolidarnos como un plantel educativo que fomente la identidad y la formación de ciudadanos participativos en el cuidado del medio ambiente y en la transformación de su comunidad.</p>
+            </div>
+        </div>
+    </section>
+    <section class="mv-values-bar">
+        <div class="values-container">
+            <div class="value-item"><div class="value-icon blue">🎓</div><span>Excelencia Académica</span></div>
+            <div class="divider-vertical"></div>
+            <div class="value-item"><div class="value-icon red">👥</div><span>Formación Integral</span></div>
+            <div class="divider-vertical"></div>
+            <div class="value-item"><div class="value-icon blue">🤝</div><span>Compromiso Social</span></div>
+        </div>
+    </section>
+</main>
+
+<!-- ══════════ VALORES ══════════ -->
+<main id="page-valores" class="page">
+    <div class="section-title">
+        <span class="line"></span>
+        <h2>Valores</h2>
+    </div>
+    <section class="valores-pro">
+        <div class="val-card">
+            <div class="val-icon blue">🤝</div>
+            <h3>Respeto</h3>
+            <p>Actuar con sensibilidad para reconocer la diversidad de la comunidad escolar favoreciendo la inclusión y la convivencia armónica dentro y fuera de la institución.</p>
+        </div>
+        <div class="val-card">
+            <div class="val-icon red">📘</div>
+            <h3>Responsabilidad</h3>
+            <p>Actuar con ética, disciplina y compromiso académico, social y ambiental.</p>
+        </div>
+        <div class="val-card">
+            <div class="val-icon blue">🏫</div>
+            <h3>Identidad</h3>
+            <p>Asumir con orgullo y sentido de pertenencia los valores institucionales para fortalecer a la comunidad escolar y proyectar una imagen positiva.</p>
+        </div>
+        <div class="val-card">
+            <div class="val-icon red">🎯</div>
+            <h3>Compromiso</h3>
+            <p>Trabajar con responsabilidad en las tareas académicas, personales y sociales para cumplir con los objetivos de la institución.</p>
+        </div>
+        <div class="val-card">
+            <div class="val-icon blue">🌍</div>
+            <h3>Inclusión</h3>
+            <p>Reconocer la diversidad y actuar con respeto para garantizar la igualdad de oportunidades en un ambiente de equidad.</p>
+        </div>
+    </section>
+</main>
+
+<!-- ══════════ MODAL PERFIL ALUMNO (ORIENTADOR) ══════════ -->
+<div id="modal-alumno" class="modal-overlay">
+    <div class="modal-box">
+        <button class="modal-close" onclick="cerrarModal()">✕</button>
+        <h2 style="font-family:'Outfit'; color:var(--p-navy); margin-bottom:5px;" id="modal-nombre">—</h2>
+        <p style="color:var(--p-gray); margin-bottom:20px;">Perfil académico del estudiante</p>
+
+        <div class="modal-info">
+            <div class="modal-info-item"><label>ID / Cuenta</label><span id="modal-id">—</span></div>
+            <div class="modal-info-item"><label>Semestre</label><span id="modal-semestre">—</span></div>
+            <div class="modal-info-item"><label>Promedio</label><span id="modal-promedio">—</span></div>
+            <div class="modal-info-item">
+                <label>Nivel de Riesgo</label>
+                <span id="modal-riesgo" style="padding:5px 14px; border-radius:20px; color:white; font-size:0.9rem; display:inline-block;">—</span>
+            </div>
+            <div class="modal-info-item"><label>Asistencia</label><span id="modal-asis">—</span></div>
+        </div>
+
+        <h4 style="font-family:'Outfit'; margin-bottom:12px; color:var(--p-navy);">Calificaciones por materia</h4>
+        <div class="tabla-wrapper">
+            <table>
+                <thead><tr><th>Materia</th><th>P1</th><th>P2</th><th>P3</th><th>Final</th></tr></thead>
+                <tbody id="modal-cals"></tbody>
+            </table>
+        </div>
+        <div style="margin-top:20px; display:flex; gap:10px; justify-content:flex-end;">
+            <button class="btn btn-blue" onclick="generarBoleta(document.getElementById('modal-id').innerText)">📄 Generar Boleta</button>
+            <button class="btn btn-red"  onclick="cerrarModal()">Cerrar</button>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <img src="img/Logo.png" style="height: 80px;">
+    <p style="font-weight: 800; letter-spacing: 1px;">ESCUELA PREPARATORIA OFICIAL NÚM. 381/TURNO MATUTINO 15EBP0025F</p>
+    <p style="opacity: 0.7; font-size: 0.8rem; margin-top: 10px;">Tenancingo, Estado de México</p>
+</footer>
+
+<div id="toast-msg" style="position:fixed;bottom:24px;right:24px;z-index:9999;padding:14px 20px;border-radius:10px;font-weight:600;font-size:.88rem;background:#dcfce7;color:#15803d;box-shadow:0 4px 24px rgba(0,0,0,.15);opacity:0;transition:opacity .3s;pointer-events:none;max-width:320px;"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
+<script src="script.js"></script>
+
+<!-- Inicialización de tabs al cargar -->
+<script>
+    // Al cargar, mostrar primer tab de alumno y staff visibles
+    document.addEventListener('DOMContentLoaded', () => {
+        document.querySelectorAll('.alumno-tab-content').forEach((t, i) => {
+            t.style.display = i === 0 ? 'block' : 'none';
+        });
+    });
+</script>
+
+
+<!-- ══════════ PORTAL DOCENTE — Solo consulta de calificaciones ══════════ -->
+<main id="page-Docentes" class="page" style="padding:0;background:#f1f5f9;min-height:100vh;">
+
+<style>
+/* ── Portal Docente styles ── */
+.doc-wrap       { max-width:1280px; margin:0 auto; padding:28px 32px; }
+.doc-header     { background:linear-gradient(135deg,var(--p-navy),#1e3a8a); border-radius:14px; padding:22px 28px; color:white; margin-bottom:22px; border-left:6px solid var(--p-red); display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px; }
+.doc-header h2  { font-family:'Outfit'; font-size:1.25rem; margin:0; }
+.doc-header p   { color:rgba(255,255,255,.7); font-size:.82rem; margin:4px 0 0; }
+.doc-header-badge { background:var(--p-red); color:white; padding:6px 18px; border-radius:20px; font-size:.78rem; font-weight:800; letter-spacing:.5px; text-transform:uppercase; }
+
+.doc-stats      { display:grid; grid-template-columns:repeat(4,1fr); gap:16px; margin-bottom:22px; }
+.doc-stat       { background:white; border-radius:12px; padding:16px 18px; box-shadow:var(--shadow); border-left:5px solid var(--p-red); display:flex; align-items:center; gap:14px; }
+.doc-stat.blue  { border-left-color:#1e40af; }
+.doc-stat.green { border-left-color:#15803d; }
+.doc-stat.amber { border-left-color:#d97706; }
+.doc-stat-ico   { font-size:1.7rem; }
+.doc-stat-val   { font-family:'Outfit'; font-size:1.6rem; font-weight:800; color:var(--p-navy); line-height:1; }
+.doc-stat-lbl   { font-size:.7rem; color:var(--p-gray); text-transform:uppercase; letter-spacing:.5px; font-weight:700; margin-top:2px; }
+
+.doc-filtros    { background:white; border-radius:14px; padding:18px 22px; box-shadow:var(--shadow); margin-bottom:20px; border-top:4px solid var(--p-red); }
+.doc-filtros-title { font-size:.75rem; font-weight:800; color:var(--p-gray); text-transform:uppercase; letter-spacing:1px; margin-bottom:12px; }
+.doc-filtros-row { display:flex; gap:12px; flex-wrap:wrap; align-items:flex-end; }
+.doc-fgrp       { display:flex; flex-direction:column; gap:4px; }
+.doc-flbl       { font-size:.7rem; font-weight:700; color:var(--p-gray); text-transform:uppercase; letter-spacing:.5px; }
+.doc-sel, .doc-inp {
+    padding:9px 13px; border:2px solid #e2e8f0; border-radius:9px; font-family:inherit; font-size:.86rem;
+    color:var(--p-navy); outline:none; background:white; transition:border-color .2s; cursor:pointer; min-width:170px;
+}
+.doc-sel:focus, .doc-inp:focus { border-color:var(--p-red); }
+.doc-inp        { min-width:230px; }
+.doc-btn-limpiar { padding:9px 18px; background:#f1f5f9; color:var(--p-navy); border:2px solid #e2e8f0; border-radius:9px; font-weight:700; font-size:.82rem; cursor:pointer; font-family:inherit; transition:.2s; }
+.doc-btn-limpiar:hover { background:#e2e8f0; }
+
+.doc-tabla-wrap { background:white; border-radius:14px; overflow:hidden; box-shadow:var(--shadow); }
+.doc-tabla-head { background:var(--p-navy); padding:13px 22px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px; }
+.doc-tabla-head h3 { font-family:'Outfit'; color:white; font-size:.93rem; margin:0; }
+.doc-tabla-meta { font-size:.78rem; color:rgba(255,255,255,.65); }
+.doc-count-badge { background:var(--p-red); color:white; padding:4px 12px; border-radius:20px; font-size:.74rem; font-weight:800; }
+
+.doc-table      { width:100%; border-collapse:collapse; }
+.doc-table thead th { background:#1e3a8a; color:white; padding:11px 16px; text-align:left; font-size:.73rem; font-weight:700; letter-spacing:.06em; text-transform:uppercase; }
+.doc-table thead th:first-child { background:var(--p-navy); width:46px; text-align:center; }
+.doc-table tbody td { padding:11px 16px; border-bottom:1px solid #f1f5f9; font-size:.87rem; color:var(--p-navy); vertical-align:middle; }
+.doc-table tbody tr:nth-child(even) { background:#f8fafc; }
+.doc-table tbody tr:hover { background:#eff6ff; }
+.doc-table tbody td:first-child { text-align:center; font-size:.78rem; font-weight:800; color:var(--p-gray); background:#f8fafc; }
+.doc-table tfoot td { background:var(--p-navy); color:white; padding:11px 16px; font-weight:700; font-size:.84rem; }
+
+.sem-badge      { display:inline-flex; align-items:center; padding:3px 10px; border-radius:20px; font-size:.72rem; font-weight:800; background:#dbeafe; color:#1e40af; }
+.grp-badge      { display:inline-flex; align-items:center; padding:3px 10px; border-radius:20px; font-size:.72rem; font-weight:800; background:#fef3c7; color:#92400e; margin-left:4px; }
+.cal-num        { font-weight:900; font-size:.95rem; padding:4px 10px; border-radius:8px; display:inline-block; min-width:38px; text-align:center; }
+.cal-aprov      { background:#dcfce7; color:#15803d; }
+.cal-repro      { background:#fee2e2; color:#dc2626; }
+.cal-nd         { background:#f1f5f9; color:#94a3b8; font-weight:600; }
+
+.doc-empty      { padding:50px; text-align:center; color:var(--p-gray); font-size:.9rem; }
+.doc-empty-ico  { font-size:2.5rem; margin-bottom:10px; }
+
+@media(max-width:900px){
+    .doc-stats { grid-template-columns:repeat(2,1fr); }
+    .doc-wrap  { padding:16px; }
+    .doc-sel,.doc-inp { min-width:140px; }
+}
+</style>
+
+<div class="doc-wrap">
+    <!-- Encabezado -->
+    <div class="doc-header">
+        <div>
+            <h2>📊 Portal Docente — <span id="doc-nombre"></span></h2>
+            <p>Consulta de calificaciones · EPO 381 Tenancingo</p>
+        </div>
+        <span class="doc-header-badge" id="doc-materia-badge">Materia</span>
+    </div>
+
+    <!-- Stats -->
+    <div class="doc-stats">
+        <div class="doc-stat blue">
+            <div class="doc-stat-ico">👥</div>
+            <div><div class="doc-stat-val" id="ds-total">0</div><div class="doc-stat-lbl">Total Alumnos</div></div>
+        </div>
+        <div class="doc-stat green">
+            <div class="doc-stat-ico">✅</div>
+            <div><div class="doc-stat-val" id="ds-aprov">0</div><div class="doc-stat-lbl">Aprobados</div></div>
+        </div>
+        <div class="doc-stat" style="border-left-color:#dc2626;">
+            <div class="doc-stat-ico">❌</div>
+            <div><div class="doc-stat-val" id="ds-repro">0</div><div class="doc-stat-lbl">Reprobados</div></div>
+        </div>
+        <div class="doc-stat amber">
+            <div class="doc-stat-ico">📈</div>
+            <div><div class="doc-stat-val" id="ds-prom">—</div><div class="doc-stat-lbl">Promedio</div></div>
+        </div>
+    </div>
+
+    <!-- Filtros -->
+    <div class="doc-filtros">
+        <div class="doc-filtros-title">🔍 Buscar Calificaciones</div>
+        <div class="doc-filtros-row">
+            <div class="doc-fgrp">
+                <span class="doc-flbl">Semestre</span>
+                <select class="doc-sel" id="df-semestre" onchange="docFiltrar()">
+                    <option value="">Todos los semestres</option>
+                    <option value="1">1° Semestre</option>
+                    <option value="2">2° Semestre</option>
+                    <option value="3">3° Semestre</option>
+                    <option value="4">4° Semestre</option>
+                    <option value="5">5° Semestre</option>
+                    <option value="6">6° Semestre</option>
+                </select>
+            </div>
+            <div class="doc-fgrp">
+                <span class="doc-flbl">Nombre del Alumno</span>
+                <input class="doc-inp" id="df-nombre" type="text" placeholder="Escribe nombre o apellido..." oninput="docFiltrar()">
+            </div>
+            <div class="doc-fgrp" style="justify-content:flex-end;">
+                <button class="doc-btn-limpiar" onclick="docLimpiar()">✕ Limpiar filtros</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tabla -->
+    <div class="doc-tabla-wrap">
+        <div class="doc-tabla-head">
+            <h3>Calificaciones — <span id="doc-subtitulo">Todos los alumnos</span></h3>
+            <div style="display:flex;align-items:center;gap:10px;">
+                <span class="doc-tabla-meta">Materia: <strong id="doc-mat-label" style="color:rgba(255,255,255,.9);">—</strong></span>
+                <span class="doc-count-badge" id="doc-count">0 alumnos</span>
+            </div>
+        </div>
+        <div style="overflow-x:auto;">
+            <table class="doc-table">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Nombre del Alumno</th>
+                        <th>Matrícula</th>
+                        <th>Semestre</th>
+                        <th>Parcial 1</th>
+                        <th>Parcial 2</th>
+                        <th>Parcial 3</th>
+                        <th>Promedio Final</th>
+                    </tr>
+                </thead>
+                <tbody id="doc-tbody">
+                    <tr><td colspan="8" class="doc-empty"><div class="doc-empty-ico">📊</div><p>Cargando...</p></td></tr>
+                </tbody>
+                <tfoot>
+                    <tr id="doc-tfoot" style="display:none;">
+                        <td colspan="7" style="text-align:right;">Promedio general del grupo:</td>
+                        <td id="doc-prom-general" style="font-weight:900;font-size:1rem;color:#fbbf24;">—</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+    </div>
+</div>
+</main>
+
+</body>
+</html>
