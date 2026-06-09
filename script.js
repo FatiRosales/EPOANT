@@ -39,64 +39,12 @@ function dbGetAll(store) { return new Promise((res, rej) => { const tx = DB.tran
 function dbPut(store, data) { return new Promise((res, rej) => { const tx = DB.transaction(store, 'readwrite'); const req = tx.objectStore(store).put(data); req.onsuccess = () => res(req.result); req.onerror = () => rej(req.error); }); }
 function dbAdd(store, data) { return new Promise((res, rej) => { const tx = DB.transaction(store, 'readwrite'); const req = tx.objectStore(store).add(data); req.onsuccess = () => res(req.result); req.onerror = () => rej(req.error); }); }
 
-/* ── Datos semilla ── */
-const SEED_USUARIOS = [
-    { usuario: 'A001', password: '1234',  rol: 'alumno',      nombre: 'García López Ana' },
-    { usuario: 'A002', password: '1234',  rol: 'alumno',      nombre: 'Martínez Pérez Juan' },
-    { usuario: 'A003', password: '1234',  rol: 'alumno',      nombre: 'Hernández Ruiz Sofía' },
-    { usuario: 'D001', password: 'doc1',  rol: 'docente',     nombre: 'Prof. Ramírez Torres',  materia: 'Matemáticas' },
-    { usuario: 'D002', password: 'doc2',  rol: 'docente',     nombre: 'Prof. Sánchez Morales', materia: 'Química' },
-    { usuario: 'O001', password: 'ori1',  rol: 'orientador',  nombre: 'Lic. Flores Méndez' },
-];
-const SEED_ALUMNOS = [
-    { matricula: 'A001', nombre: 'García López Ana',       semestre: 4, grupo: 'A', riesgo: 0, tel: '7221001001', direccion: 'Calle Principal 10', tutor: 'Elena García',   telTutor: '7221002001' },
-    { matricula: 'A002', nombre: 'Martínez Pérez Juan',    semestre: 2, grupo: 'B', riesgo: 3, tel: '7221001002', direccion: 'Av. Reforma 45',     tutor: 'Jorge Martínez', telTutor: '7221002002' },
-    { matricula: 'A003', nombre: 'Hernández Ruiz Sofía',   semestre: 6, grupo: 'A', riesgo: 1, tel: '7221001003', direccion: 'Blvd. Flores 22',    tutor: 'Rosa Ruiz',      telTutor: '7221002003' },
-    { matricula: 'A004', nombre: 'López Reyes Carlos',     semestre: 4, grupo: 'A', riesgo: 4, tel: '7221001004', direccion: 'Calle Juárez 78',    tutor: 'Carlos López',   telTutor: '7221002004' },
-    { matricula: 'A005', nombre: 'Romero Soto Valeria',    semestre: 2, grupo: 'B', riesgo: 0, tel: '7221001005', direccion: 'Privada Morelos 5',  tutor: 'Laura Soto',     telTutor: '7221002005' },
-    { matricula: 'A006', nombre: 'Chávez Nava Diego',      semestre: 6, grupo: 'A', riesgo: 2, tel: '7221001006', direccion: 'Colonia Centro 3',   tutor: 'Pedro Nava',     telTutor: '7221002006' },
-];
-const MATERIAS = ['Matemáticas', 'Español', 'Física', 'Química', 'Historia', 'Inglés'];
-function rnd(min, max) { return +(Math.random() * (max - min) + min).toFixed(1); }
-const SEED_CALIFICACIONES = [];
-SEED_ALUMNOS.forEach(a => {
-    MATERIAS.forEach(mat => {
-        const p1 = rnd(5, 10), p2 = rnd(5, 10), p3 = rnd(5, 10);
-        const final = +((p1 + p2 + p3) / 3).toFixed(1);
-        SEED_CALIFICACIONES.push({
-            id: `${a.matricula}_${mat}`, matricula: a.matricula, materia: mat,
-            p1, p2, p3, final, semestre: a.semestre, grupo: a.grupo
-        });
-    });
-});
-const SEED_ASISTENCIAS = [
-    { matricula: 'A001', total: 120, asistidas: 115, faltas: 5,  porcentaje: 95.8 },
-    { matricula: 'A002', total: 120, asistidas: 90,  faltas: 30, porcentaje: 75.0 },
-    { matricula: 'A003', total: 120, asistidas: 108, faltas: 12, porcentaje: 90.0 },
-    { matricula: 'A004', total: 120, asistidas: 102, faltas: 18, porcentaje: 85.0 },
-    { matricula: 'A005', total: 120, asistidas: 116, faltas: 4,  porcentaje: 96.7 },
-    { matricula: 'A006', total: 120, asistidas: 98,  faltas: 22, porcentaje: 81.7 },
-];
-const SEED_EVENTOS = [
-    { titulo: 'Semana Cultural 2025', fecha: '2025-05-12', desc: 'Exposición de arte y ciencias a cargo de los alumnos.' },
-    { titulo: 'Torneo Deportivo Interescolar', fecha: '2025-04-28', desc: 'Futbol, basquetbol y atletismo. Sede: Canchas EPO 381.' },
-    { titulo: 'Conferencia Orientación Vocacional', fecha: '2025-06-05', desc: 'Para alumnos de 5to y 6to semestre sobre opciones universitarias.' },
-];
-const HORARIO_BASE = [
-    { hora: '07:00 - 08:00', lunes: 'Matemáticas', martes: 'Español',      miercoles: 'Física',        jueves: 'Química',       viernes: 'Historia' },
-    { hora: '08:00 - 09:00', lunes: 'Química',     martes: 'Física',       miercoles: 'Historia',      jueves: 'Inglés',        viernes: 'Matemáticas' },
-    { hora: '09:00 - 10:00', lunes: 'Inglés',      martes: 'Historia',     miercoles: 'Español',       jueves: 'Matemáticas',   viernes: 'Química' },
-    { hora: '10:00 - 11:00', lunes: 'Español',     martes: 'Matemáticas',  miercoles: 'Inglés',        jueves: 'Historia',      viernes: 'Física' },
-];
+/* ── Sin datos semilla — conectar a PostgreSQL via API ── */
+const HORARIO_BASE = [];
 
 async function seedDB() {
-    const existing = await dbGetAll('usuarios');
-    if (existing.length > 0) return;
-    for (const u of SEED_USUARIOS) await dbPut('usuarios', u);
-    for (const a of SEED_ALUMNOS)  await dbPut('alumnos', a);
-    for (const c of SEED_CALIFICACIONES) await dbPut('calificaciones', c);
-    for (const a of SEED_ASISTENCIAS)    await dbPut('asistencias', a);
-    for (const e of SEED_EVENTOS) await dbAdd('eventos', e);
+    // Los datos se cargan desde la API/PostgreSQL
+    // No se insertan registros de prueba
 }
 
 /* ═══════════════════════════════════════════
@@ -111,13 +59,7 @@ async function openLogin(role) {
     const loginTitle = document.getElementById('l-title');
     const loginHint  = document.getElementById('l-hint');
     if (loginTitle) loginTitle.innerText = 'Acceso ' + role;
-
-    const hints = {
-        'Alumnos':      'Alumnos: A001/1234 · A002/1234 · A003/1234',
-        'Docentes':     'Docentes: D001/doc1 · D002/doc2',
-        'Orientadores': 'Orientadores: O001/ori1',
-    };
-    if (loginHint) loginHint.innerText = hints[role] || '';
+    if (loginHint) loginHint.innerText = '';
 
     document.getElementById('login-usuario').value = '';
     document.getElementById('login-password').value = '';
@@ -1292,10 +1234,12 @@ async function renderPortalDocenteNuevo(id, user) {
 
 function docFiltrar() {
     const semestre = (document.getElementById('df-semestre')?.value || '').trim();
-    const nombre   = (document.getElementById('df-nombre')?.value  || '').toLowerCase().trim();
+    const grupo    = (document.getElementById('df-grupo')?.value    || '').trim();
+    const nombre   = (document.getElementById('df-nombre')?.value   || '').toLowerCase().trim();
 
     let lista = [..._docAlumnos];
     if (semestre) lista = lista.filter(a => String(a.semestre) === semestre);
+    if (grupo)    lista = lista.filter(a => a.grupo === grupo);
     if (nombre)   lista = lista.filter(a => a.nombre.toLowerCase().includes(nombre));
 
     _docRenderTabla(lista);
@@ -1304,6 +1248,7 @@ function docFiltrar() {
     // Subtítulo
     const partes = [];
     if (semestre) partes.push(semestre + '° Semestre');
+    if (grupo)    partes.push('Grupo ' + grupo);
     if (nombre)   partes.push('"' + nombre + '"');
     const sub = document.getElementById('doc-subtitulo');
     if (sub) sub.textContent = partes.length ? partes.join(' · ') : 'Todos los alumnos';
@@ -1375,8 +1320,10 @@ function _docStats(lista) {
 
 function docLimpiar() {
     const s = document.getElementById('df-semestre');
+    const g = document.getElementById('df-grupo');
     const n = document.getElementById('df-nombre');
     if (s) s.value = '';
+    if (g) g.value = '';
     if (n) n.value = '';
     docFiltrar();
 }

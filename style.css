@@ -24,16 +24,25 @@ header {
     background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(8px);
     position: sticky; top: 0; z-index: 1000; 
-    padding: 0 5%; border-bottom: 5px solid var(--p-red); height: 100px; box-shadow: var(--shadow);
+    padding: 0 5%; border-bottom: 5px solid var(--p-red);
+    min-height: 70px; box-shadow: var(--shadow);
 }
-.nav-wrapper { max-width: 1400px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 100%; }
+.nav-wrapper { max-width: 1400px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; min-height: 70px; flex-wrap: wrap; }
 
 .logo-box { display: flex; align-items: center; gap: 15px; text-decoration: none; color: var(--p-navy); cursor: pointer; transition: 0.3s; }
 .logo-box:hover { transform: translateY(-2px); }
-.logo-img { height: 75px; width: auto; filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1)); }
+.logo-img { height: 55px; width: auto; filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1)); }
 
-.logo-text h1 { font-family: 'Outfit'; font-size: 1.6rem; letter-spacing: -0.5px; line-height: 1; }
+.logo-text h1 { font-family: 'Outfit'; font-size: 1.4rem; letter-spacing: -0.5px; line-height: 1; }
 .logo-text span { color: var(--p-red); font-size: 0.75rem; font-weight: 800; letter-spacing: 2px; }
+
+/* Botón hamburguesa */
+.menu-toggle {
+    display: none;
+    background: none; border: none; cursor: pointer;
+    font-size: 1.8rem; color: var(--p-navy); padding: 10px;
+    line-height: 1;
+}
 
 .menu-list { display: flex; list-style: none; height: 100%; align-items: center; }
 .menu-item { position: relative; height: 100%; display: flex; align-items: center; }
@@ -53,7 +62,7 @@ header {
 .drop-link:hover { background: #fff1f2; color: var(--p-red); padding-left: 35px; }
 
 /* ===== PÁGINAS ===== */
-.page { display: none; padding: 50px 5%; max-width: 1300px; margin: 0 auto; animation: slideUp 0.5s ease; }
+.page { display: none; padding: 30px 4%; max-width: 1300px; margin: 0 auto; animation: slideUp 0.5s ease; }
 .page.active { display: block; }
 @keyframes slideUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
 
@@ -168,10 +177,10 @@ footer { text-align: center; padding: 60px; color: white; background: var(--p-na
 .tabla-wrapper { overflow-x: auto; border-radius: var(--radius); box-shadow: var(--shadow); }
 table { width: 100%; border-collapse: collapse; background: white; }
 thead { background: var(--p-navy); color: white; }
-thead th { padding: 15px 20px; text-align: left; font-family: 'Outfit'; font-size: 0.85rem; letter-spacing: 1px; text-transform: uppercase; }
+thead th { padding: 6px 12px; text-align: left; font-family: 'Outfit'; font-size: 0.72rem; letter-spacing: 1px; text-transform: uppercase; }
 tbody tr { border-bottom: 1px solid #f1f5f9; transition: 0.2s; }
 tbody tr:hover { background: #f8fafc; }
-tbody td { padding: 14px 20px; font-size: 0.95rem; color: var(--p-navy); }
+tbody td { padding: 5px 12px; font-size: 0.82rem; color: var(--p-navy); }
 .cal-input { width: 70px; padding: 6px 10px; border: 2px solid #e2e8f0; border-radius: 8px; font-family: inherit; font-size: 0.9rem; text-align: center; }
 .cal-input:focus { border-color: var(--p-blue); outline: none; }
 
@@ -433,7 +442,16 @@ thead, .al-table thead, .ori-data-table thead,
     background: var(--p-navy) !important;
 }
 tbody tr:hover { background: rgba(142,27,34,.05) !important; }
-tbody tr:nth-child(even) { background: rgba(30,41,59,.025); }
+tbody tr:nth-child(even) { background: rgba(30,64,175,.04); }
+
+/* Compactar al-table (datos personales, domicilio, procedencia) */
+.al-table thead th { padding: 8px 14px !important; font-size: .72rem !important; }
+.al-table tbody td { padding: 7px 14px !important; font-size: .84rem !important; }
+.al-table tbody tr:first-child td { padding-top: 9px !important; }
+
+/* Compactar cal-table */
+.cal-table thead th { padding: 8px 14px !important; font-size: .72rem !important; }
+.cal-table tbody td { padding: 7px 14px !important; font-size: .84rem !important; }
 
 /* Panel header alumno */
 .al-panel-header { background: var(--p-navy) !important; }
